@@ -59,6 +59,43 @@ export function getAllPosts(category: string): Post[] {
     return posts;
 }
 
+export function getRelatedPosts(currentPost: Post, limit = 3): Post[] {
+    const allCategories = getAllCategories();
+    let allPosts: Post[] = [];
+
+    // Gather all posts
+    allCategories.forEach(cat => {
+        allPosts = [...allPosts, ...getAllPosts(cat)];
+    });
+
+    // Filter out current post
+    const otherPosts = allPosts.filter(p => p.slug !== currentPost.slug);
+
+    // Score posts based on matching keywords and category
+    const scoredPosts = otherPosts.map(post => {
+        let score = 0;
+
+        // Same category gets points
+        if (post.category === currentPost.category) score += 2;
+
+        // Matching keywords get points
+        const commonKeywords = post.keywords.filter(k =>
+            currentPost.keywords.includes(k)
+        );
+        score += commonKeywords.length * 3;
+
+        return { post, score };
+    });
+
+    // Sort by score desc, then date desc
+    scoredPosts.sort((a, b) => {
+        if (b.score !== a.score) return b.score - a.score;
+        return new Date(b.post.publishedAt).getTime() - new Date(a.post.publishedAt).getTime();
+    });
+
+    return scoredPosts.slice(0, limit).map(p => p.post);
+}
+
 export function getAllCategories(): string[] {
     if (!fs.existsSync(CONTENT_DIR)) return [];
     return fs.readdirSync(CONTENT_DIR).filter((file) => {
