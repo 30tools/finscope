@@ -1,12 +1,27 @@
 import { ImageResponse } from 'next/og';
-import { getPostBySlug } from '@/lib/posts';
+import { getPostBySlug, getAllPosts } from '@/lib/posts';
 
+export const dynamic = 'force-static';
 export const alt = 'FinScope Article';
 export const size = {
     width: 1200,
     height: 630,
 };
 export const contentType = 'image/png';
+
+export async function generateStaticParams() {
+    const categories = ["credit-cards", "personal-loans", "credit-score", "insurance", "tax-saving", "banking"];
+    const params: { category: string; slug: string }[] = [];
+
+    for (const category of categories) {
+        const posts = getAllPosts(category);
+        for (const post of posts) {
+            params.push({ category, slug: post.slug });
+        }
+    }
+
+    return params;
+}
 
 export default async function Image({ params }: { params: { category: string; slug: string } }) {
     const { category, slug } = await params;
@@ -28,13 +43,13 @@ export default async function Image({ params }: { params: { category: string; sl
                     borderBottom: '20px solid #0284c7',
                 }}
             >
-                <div style={{ fontSize: 30, color: '#0284c7', marginBottom: 20, textTransform: 'uppercase', fontWeight: 900, fontFamily: 'sans-serif' }}>
+                <div style={{ display: 'flex', fontSize: 30, color: '#0284c7', marginBottom: 20, textTransform: 'uppercase', fontWeight: 900, fontFamily: 'sans-serif' }}>
                     FinScope • {post?.category?.replace(/-/g, ' ')}
                 </div>
-                <div style={{ fontSize: 70, fontWeight: 900, color: '#111', lineHeight: 1.1, marginBottom: 40, fontFamily: 'sans-serif' }}>
+                <div style={{ display: 'flex', fontSize: 70, fontWeight: 900, color: '#111', lineHeight: 1.1, marginBottom: 40, fontFamily: 'sans-serif' }}>
                     {post?.title || 'Finance Insights'}
                 </div>
-                <div style={{ fontSize: 30, color: '#666', fontFamily: 'sans-serif' }}>
+                <div style={{ display: 'flex', fontSize: 30, color: '#666', fontFamily: 'sans-serif' }}>
                     By {post?.author || 'FinScope Team'}
                 </div>
             </div>

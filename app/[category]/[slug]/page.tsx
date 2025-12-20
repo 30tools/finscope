@@ -4,7 +4,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { constructMetadata } from "@/lib/seo";
-import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema, generateReviewSchema } from "@/lib/schema";
 import ArticleLayout from "@/components/ArticleLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
@@ -107,6 +107,18 @@ export default async function ArticlePage({ params }: Props) {
                     __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs.map(b => ({ name: b.name, item: b.href })))),
                 }}
             />
+            {['credit-cards', 'personal-loans', 'banking'].includes(post.category) && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(generateReviewSchema({
+                            title: post.title,
+                            author: post.author,
+                            rating: 4.5
+                        })),
+                    }}
+                />
+            )}
 
             <div className="container mx-auto px-4 py-8 max-w-7xl">
                 <Breadcrumbs items={breadcrumbs} />
