@@ -45,5 +45,8 @@ export function constructMetadata({
                 follow: false,
             },
         }),
+        other: {
+            "google-adsense-account": "ca-pub-1828915420581549",
+        },
     };
 }

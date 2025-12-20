@@ -1,5 +1,7 @@
-import { getAllPosts, getPostBySlug } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+import { format } from "date-fns";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { constructMetadata } from "@/lib/seo";
 import { generateArticleSchema, generateBreadcrumbSchema } from "@/lib/schema";
@@ -138,10 +140,30 @@ export default async function ArticlePage({ params }: Props) {
                     />
                 </ArticleLayout>
 
-                <div className="max-w-4xl mx-auto mt-12">
-                    <h3 className="text-xl font-bold mb-4">Related Articles</h3>
-                    {/* Implement related articles later */}
-                    <p className="text-gray-500 italic">More articles coming soon...</p>
+                <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-gray-200">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-900">Related Articles</h3>
+                    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                        {getRelatedPosts(post).map((relatedPost) => (
+                            <Link key={relatedPost.slug} href={`/${relatedPost.category}/${relatedPost.slug}`} className="group block h-full">
+                                <div className="bg-gray-50 rounded-lg p-5 h-full hover:shadow-md transition-shadow border border-gray-100 flex flex-col">
+                                    <span className="text-xs font-semibold text-sky-600 uppercase tracking-wider mb-2">
+                                        {relatedPost.category.replace('-', ' ')}
+                                    </span>
+                                    <h4 className="font-bold text-gray-900 group-hover:text-sky-600 mb-2 line-clamp-2">
+                                        {relatedPost.title}
+                                    </h4>
+                                    <p className="text-sm text-gray-600 line-clamp-3 mb-4 flex-grow">
+                                        {relatedPost.description}
+                                    </p>
+                                    <div className="flex items-center text-xs text-gray-500 mt-auto">
+                                        <time dateTime={relatedPost.publishedAt}>
+                                            {format(new Date(relatedPost.publishedAt), 'MMM d, yyyy')}
+                                        </time>
+                                    </div>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
                 </div>
 
                 <AdSlot type="sticky" />

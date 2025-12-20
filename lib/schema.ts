@@ -72,3 +72,46 @@ export function generateOrganizationSchema() {
         ],
     };
 }
+
+export function generateFAQSchema(faqs: { question: string; answer: string }[]) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faqs.map((faq) => ({
+            "@type": "Question",
+            name: faq.question,
+            acceptedAnswer: {
+                "@type": "Answer",
+                text: faq.answer,
+            },
+        })),
+    };
+}
+
+export function generateReviewSchema({
+    title,
+    rating = 4.5,
+    author,
+}: {
+    title: string;
+    rating?: number;
+    author: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Review",
+        itemReviewed: {
+            "@type": "Product",
+            name: title,
+        },
+        author: {
+            "@type": "Person",
+            name: author,
+        },
+        reviewRating: {
+            "@type": "Rating",
+            ratingValue: rating,
+            bestRating: 5,
+        },
+    };
+}
