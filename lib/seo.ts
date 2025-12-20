@@ -1,5 +1,5 @@
 export const SITE_NAME = "FinScope";
-export const SITE_URL = "https://finscope.com"; // Replace with actual URL
+export const SITE_URL = "https://finscope.strivio.world";
 export const SITE_DESCRIPTION = "FinScope - Your guide to credit cards, personal loans, and financial freedom.";
 export const TWITTER_HANDLE = "@finscope";
 

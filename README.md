@@ -1,36 +1,100 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FinScope
 
-## Getting Started
+FinScope is a modern, static-first finance blog built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **MDX**. It is designed for high performance, maximum SEO, and seamless deployment on **Cloudflare Pages**.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+-   **Static Site Generation (SSG)**: Pre-rendered pages for lightning-fast load times.
+-   **MDX Support**: Write content in Markdown with embedded React components.
+-   **SEO Optimized**: Dynamic metadata, JSON-LD schema, and sitemap generation.
+-   **Responsive Design**: Built with Tailwind CSS v4 (alpha/beta) concepts.
+-   **Client-Side Interactive Elements**: Table of Contents, Breadcrumbs, etc.
+-   **AdSense Ready**: Placeholder slots for strategic ad placement.
+
+## 🛠️ Tech Stack
+
+-   **Framework**: [Next.js 15](https://nextjs.org/)
+-   **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Content**: MDX (via `next-mdx-remote`)
+-   **Icons**: [Lucide React](https://lucide.dev/)
+-   **Deployment**: [Cloudflare Pages](https://pages.cloudflare.com/)
+
+## 🏃‍♂️ Getting Started
+
+### Prerequisites
+
+-   Node.js 18+
+-   npm or yarn or pnpm or bun
+
+### Installation
+
+1.  Clone the repository:
+    ```bash
+    git clone https://github.com/your-username/finscope.git
+    cd finscope
+    ```
+
+2.  Install dependencies:
+    ```bash
+    npm install
+    ```
+
+3.  Run the development server:
+    ```bash
+    npm run dev
+    ```
+
+4.  Open [http://localhost:3000](http://localhost:3000) with your browser.
+
+## 📝 Content Management
+
+Content is managed via MDX files located in the `content/` directory.
+
+### Directory Structure
+```
+content/
+├── credit-cards/
+│   ├── best-student-cards.mdx
+│   └── axis-magnus-review.mdx
+├── personal-loans/
+└── ...
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Frontmatter Schema
+Each MDX file must start with the following frontmatter:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```yaml
+---
+title: "Article Title"
+slug: "url-friendly-slug"
+description: "Short description for SEO."
+category: "credit-cards" # Must match directory name
+author: "Author Name"
+publishedAt: "YYYY-MM-DD"
+updatedAt: "YYYY-MM-DD"
+keywords:
+  - "keyword 1"
+  - "keyword 2"
+---
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚢 Deployment
 
-## Learn More
+This project is configured for **Cloudflare Pages**.
 
-To learn more about Next.js, take a look at the following resources:
+1.  **Build**:
+    ```bash
+    npm run build
+    ```
+    This generates a static `out/` directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2.  **Deploy (Manual)**:
+    ```bash
+    npx wrangler pages deploy out --project-name finscope
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+3.  **CI/CD**: Connect your GitHub repository to Cloudflare Pages for automatic deployments on push.
 
-## Deploy on Vercel
+## 📄 License
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License.
