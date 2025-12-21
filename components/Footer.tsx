@@ -14,6 +14,7 @@ export default function Footer() {
                         <li><Link href="/credit-cards" className="hover:text-white">Credit Cards</Link></li>
                         <li><Link href="/personal-loans" className="hover:text-white">Personal Loans</Link></li>
                         <li><Link href="/insurance" className="hover:text-white">Insurance</Link></li>
+                        <li><Link href="https://finscope-calculators.strivio.world/" className="hover:text-white text-blue-400 font-medium" target="_blank" rel="noopener noreferrer">Free Calculators ↗</Link></li>
                     </ul>
                 </div>
                 <div>
