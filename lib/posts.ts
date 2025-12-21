@@ -59,6 +59,21 @@ export function getAllPosts(category: string): Post[] {
     return posts;
 }
 
+export function getRecentPosts(limit?: number): Post[] {
+    const categories = getAllCategories();
+    let allPosts: Post[] = [];
+    categories.forEach((cat) => {
+        allPosts = [...allPosts, ...getAllPosts(cat)];
+    });
+
+    allPosts.sort((post1, post2) => (post1.publishedAt > post2.publishedAt ? -1 : 1));
+
+    if (limit) {
+        return allPosts.slice(0, limit);
+    }
+    return allPosts;
+}
+
 export function getRelatedPosts(currentPost: Post, limit = 3): Post[] {
     const allCategories = getAllCategories();
     let allPosts: Post[] = [];

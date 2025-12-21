@@ -1,5 +1,5 @@
 export const SITE_NAME = "FinScope - Your guide to credit cards, personal loans, and financial freedom.";
-export const SITE_URL = "https://finscope.strivio.world";
+export const SITE_URL = "https://wify.my";
 export const SITE_DESCRIPTION = "FinScope - Your guide to credit cards, personal loans, and financial freedom.";
 export const TWITTER_HANDLE = "@finscope";
 

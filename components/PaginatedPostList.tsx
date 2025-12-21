@@ -4,14 +4,20 @@ import { useState } from "react";
 import Link from "next/link";
 import { Post } from "@/lib/posts"; // Ensure this matches your type definition path
 
-const ITEMS_per_PAGE = 9;
-
-export default function PaginatedPostList({ posts, category }: { posts: Post[]; category: string }) {
+export default function PaginatedPostList({
+    posts,
+    category,
+    itemsPerPage = 9
+}: {
+    posts: Post[];
+    category?: string;
+    itemsPerPage?: number;
+}) {
     const [currentPage, setCurrentPage] = useState(1);
 
-    const totalPages = Math.ceil(posts.length / ITEMS_per_PAGE);
-    const startIndex = (currentPage - 1) * ITEMS_per_PAGE;
-    const currentPosts = posts.slice(startIndex, startIndex + ITEMS_per_PAGE);
+    const totalPages = Math.ceil(posts.length / itemsPerPage);
+    const startIndex = (currentPage - 1) * itemsPerPage;
+    const currentPosts = posts.slice(startIndex, startIndex + itemsPerPage);
 
     const scrollToTop = () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -30,11 +36,11 @@ export default function PaginatedPostList({ posts, category }: { posts: Post[]; 
         <div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {currentPosts.map((post) => (
-                    <Link key={post.slug} href={`/${category}/${post.slug}`} className="block group h-full">
+                    <Link key={post.slug} href={`/${post.category || category}/${post.slug}`} className="block group h-full">
                         <article className="border border-gray-100 bg-white rounded-lg p-6 hover:shadow-lg transition h-full flex flex-col">
                             <div className="mb-4">
                                 <span className="text-xs font-bold text-sky-600 uppercase tracking-wider bg-sky-50 px-2 py-1 rounded">
-                                    {post.category?.replace(/-/g, " ") || category}
+                                    {post.category?.replace(/-/g, " ") || category?.replace(/-/g, " ")}
                                 </span>
                             </div>
                             <h2 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-sky-600 line-clamp-2">
@@ -67,8 +73,8 @@ export default function PaginatedPostList({ posts, category }: { posts: Post[]; 
                                 key={page}
                                 onClick={() => handlePageChange(page)}
                                 className={`w-8 h-8 rounded text-sm flex items-center justify-center transition ${currentPage === page
-                                        ? "bg-sky-600 text-white font-medium"
-                                        : "hover:bg-gray-50 text-gray-600"
+                                    ? "bg-sky-600 text-white font-medium"
+                                    : "hover:bg-gray-50 text-gray-600"
                                     }`}
                             >
                                 {page}
