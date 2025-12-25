@@ -4,32 +4,22 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'Unstory',
-        short_name: 'Unstory',
-        description: 'Your guide to credit cards, personal loans, and financial freedom.',
+        name: 'FinScope',
+        short_name: 'FinScope',
+        description: 'Comprehensive Financial Analytics & Insights',
         start_url: '/',
         display: 'standalone',
         background_color: '#ffffff',
-        theme_color: '#0284c7',
+        theme_color: '#0d9488',
         icons: [
             {
-                src: '/icon',
+                src: '/favicon.ico',
                 sizes: '32x32',
-                type: 'image/png',
+                type: 'image/x-icon',
             },
             {
-                src: '/icon-192',
-                sizes: '192x192',
-                type: 'image/png',
-            },
-            {
-                src: '/icon-512',
+                src: '/logo.png',
                 sizes: '512x512',
-                type: 'image/png',
-            },
-            {
-                src: '/apple-icon',
-                sizes: '180x180',
                 type: 'image/png',
             },
         ],

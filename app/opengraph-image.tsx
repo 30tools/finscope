@@ -5,7 +5,7 @@ export const runtime = 'edge';
 export const dynamic = 'force-static';
 
 // Image metadata
-export const alt = 'Unstory - Financial Authority';
+export const alt = 'FinScope - Financial Analytics & Insights';
 export const size = {
     width: 1200,
     height: 630,
@@ -28,14 +28,14 @@ export default async function Image() {
                     flexDirection: 'column',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    borderBottom: '20px solid #0284c7',
+                    borderBottom: '20px solid #0d9488',
                 }}
             >
-                <div style={{ display: 'flex', fontSize: 120, fontWeight: 900, color: '#0284c7', letterSpacing: '-0.05em', lineHeight: 1 }}>
-                    Unstory
+                <div style={{ display: 'flex', fontSize: 120, fontWeight: 900, color: '#0d9488', letterSpacing: '-0.05em', lineHeight: 1 }}>
+                    FinScope
                 </div>
                 <div style={{ display: 'flex', fontSize: 40, color: '#333', marginTop: 30, textTransform: 'uppercase', letterSpacing: '0.1em' }}>
-                    Financial Clarity
+                    Financial Insights
                 </div>
             </div>
         ),

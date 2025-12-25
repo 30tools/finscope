@@ -24,9 +24,16 @@ export function constructMetadata({
         openGraph: {
             title,
             description,
+            type: "website",
+            locale: "en_US",
+            url: SITE_URL,
+            siteName: "FinScope",
             images: [
                 {
                     url: image,
+                    width: 1200,
+                    height: 630,
+                    alt: title,
                 },
             ],
         },
@@ -36,15 +43,45 @@ export function constructMetadata({
             description,
             images: [image],
             creator: TWITTER_HANDLE,
+            site: TWITTER_HANDLE,
         },
-        icons,
+        icons: {
+            icon: [
+                { url: "/favicon.ico" },
+                { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+            ],
+            apple: [
+                { url: "/logo.png", sizes: "180x180", type: "image/png" },
+            ],
+        },
         metadataBase: new URL(SITE_URL),
-        ...(noIndex && {
-            robots: {
-                index: false,
-                follow: false,
+        robots: {
+            index: !noIndex,
+            follow: !noIndex,
+            googleBot: {
+                index: !noIndex,
+                follow: !noIndex,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
             },
-        }),
+        },
+        manifest: "/manifest.json",
+        alternates: {
+            canonical: SITE_URL,
+            types: {
+                'application/rss+xml': `${SITE_URL}/feed.xml`,
+            },
+        },
+        applicationName: "FinScope",
+        appleWebApp: {
+            capable: true,
+            statusBarStyle: "default",
+            title: "FinScope",
+        },
+        formatDetection: {
+            telephone: false,
+        },
         other: {
             "google-adsense-account": "ca-pub-1828915420581549",
         },
