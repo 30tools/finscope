@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
                 <div>
                     <h3 className="text-white text-lg font-bold mb-4">FinScope</h3>
-                    <p className="text-sm">Your trusted guide to financial freedom. Owned and operated by wify.my.</p>
+                    <p className="text-sm">Your trusted guide to financial freedom. Owned and operated by unstory.app.</p>
                 </div>
                 <div>
                     <h4 className="text-white font-medium mb-4">Products</h4>

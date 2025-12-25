@@ -21,13 +21,13 @@ export default function ContactPage() {
                     <div className="bg-blue-50 p-8 rounded-xl border border-blue-100">
                         <h2 className="text-xl font-bold mb-4 text-blue-900">General Inquiries</h2>
                         <p className="mb-2 text-blue-800">For general feedback and questions:</p>
-                        <a href="mailto:contact@wify.my" className="text-blue-600 font-bold hover:underline text-lg">contact@wify.my</a>
+                        <a href="mailto:contact@unstory.app" className="text-blue-600 font-bold hover:underline text-lg">contact@unstory.app</a>
                     </div>
 
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
                         <h2 className="text-xl font-bold mb-4 text-gray-900">Advertising & Partnerships</h2>
                         <p className="mb-2 text-gray-600">Interested in working with FinScope?</p>
-                        <a href="mailto:ads@wify.my" className="text-blue-600 font-bold hover:underline text-lg">ads@wify.my</a>
+                        <a href="mailto:ads@unstory.app" className="text-blue-600 font-bold hover:underline text-lg">ads@unstory.app</a>
                     </div>
                 </div>
 

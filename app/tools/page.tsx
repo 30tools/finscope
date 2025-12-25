@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Free Financial Calculators | FinScope',
         description: 'Plan your financial future with our suite of free tools.',
-        url: 'https://wify.my/tools',
+        url: 'https://unstory.app/tools',
     },
 };
 

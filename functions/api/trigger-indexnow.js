@@ -1,7 +1,7 @@
 export async function onRequestPost({ request }) {
     const API_KEY = '6770db5397184cacb0c3ea38d9827e06';
-    const KEY_LOCATION = 'https://wify.my/6770db5397184cacb0c3ea38d9827e06.txt';
-    const DEFAULT_HOST = 'wify.my';
+    const KEY_LOCATION = 'https://unstory.app/6770db5397184cacb0c3ea38d9827e06.txt';
+    const DEFAULT_HOST = 'unstory.app';
 
     try {
         const { urls, host } = await request.json();

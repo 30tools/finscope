@@ -7,7 +7,7 @@ export default function IndexNowPage() {
     const [status, setStatus] = useState<string>('');
     const [isLoading, setIsLoading] = useState(false);
     const [customUrls, setCustomUrls] = useState('');
-    const [host, setHost] = useState('wify.my');
+    const [host, setHost] = useState('unstory.app');
 
     // Generate full list of URLs based on the selected host
     const generateAllUrls = () => {
@@ -73,7 +73,7 @@ export default function IndexNowPage() {
                         onChange={(e) => setHost(e.target.value)}
                         className="w-full p-2 rounded border border-blue-200"
                     >
-                        <option value="wify.my">wify.my (Primary)</option>
+                        <option value="unstory.app">unstory.app (Primary)</option>
                         <option value="finscope.strivio.world">finscope.strivio.world (Secondary)</option>
                     </select>
                 </div>

@@ -31,14 +31,14 @@ export default function RootLayout({
                             "@context": "https://schema.org",
                             "@type": "Organization",
                             "name": "FinScope",
-                            "url": "https://wify.my",
-                            "logo": "https://wify.my/icon.png",
+                            "url": "https://unstory.app",
+                            "logo": "https://unstory.app/icon.png",
                             "sameAs": [
-                                "https://wify.my"
+                                "https://unstory.app"
                             ],
                             "contactPoint": {
                                 "@type": "ContactPoint",
-                                "email": "contact@wify.my",
+                                "email": "contact@unstory.app",
                                 "contactType": "customer support"
                             }
                         }

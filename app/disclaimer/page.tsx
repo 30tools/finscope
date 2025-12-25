@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Financial Disclaimer | FinScope (wify.my)',
+    title: 'Financial Disclaimer | FinScope (unstory.app)',
     description: 'Important disclaimers regarding financial information.',
 };
 
@@ -16,12 +16,12 @@ export default function DisclaimerPage() {
 
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 my-6 not-prose">
                     <p className="font-bold text-yellow-800">Crucial Notice</p>
-                    <p className="text-yellow-700 text-sm">FinScope (wify.my) is an educational platform, not a financial advisory firm.</p>
+                    <p className="text-yellow-700 text-sm">FinScope (unstory.app) is an educational platform, not a financial advisory firm.</p>
                 </div>
 
                 <h2>1. No Financial Advice</h2>
                 <p>
-                    The information contained on wify.my is for general information purposes only. The information is provided by FinScope and while we endeavour to keep the information up to date and correct,
+                    The information contained on unstory.app is for general information purposes only. The information is provided by FinScope and while we endeavour to keep the information up to date and correct,
                     we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website.
                 </p>
                 <p>

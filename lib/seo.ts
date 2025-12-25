@@ -1,5 +1,5 @@
 export const SITE_NAME = "FinScope - Your guide to credit cards, personal loans, and financial freedom.";
-export const SITE_URL = "https://wify.my";
+export const SITE_URL = "https://unstory.app";
 export const SITE_DESCRIPTION = "FinScope - Your guide to credit cards, personal loans, and financial freedom.";
 export const TWITTER_HANDLE = "@finscope";
 
@@ -8,7 +8,7 @@ import { Metadata } from "next";
 export function constructMetadata({
     title = SITE_NAME,
     description = SITE_DESCRIPTION,
-    image = "https://wify.my/og-image.jpg",
+    image = "https://unstory.app/og-image.jpg",
     icons = "/favicon.ico",
     noIndex = false,
 }: {

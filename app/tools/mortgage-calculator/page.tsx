@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Free Mortgage Calculator 2025 | FinScope',
         description: 'Estimate your monthly home payments accurately. Includes updated 2025 tax and insurance rates.',
-        url: 'https://wify.my/tools/mortgage-calculator',
+        url: 'https://unstory.app/tools/mortgage-calculator',
     },
 };
 

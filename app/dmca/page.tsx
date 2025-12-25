@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'DMCA Policy | FinScope (wify.my)',
+    title: 'DMCA Policy | FinScope (unstory.app)',
     description: 'Digital Millennium Copyright Act Notice',
 };
 
@@ -15,14 +15,14 @@ export default function DMCAPage() {
                 <h1 className="mt-6">DMCA Copyright Policy</h1>
 
                 <p>
-                    <strong>wify.my</strong> respects the intellectual property rights of others. It is our policy to respond to any claim that Content posted on the Service
+                    <strong>unstory.app</strong> respects the intellectual property rights of others. It is our policy to respond to any claim that Content posted on the Service
                     infringes the copyright or other intellectual property infringement ("Infringement") of any person.
                 </p>
 
                 <h2>DMCA Notice of Alleged Infringement ("Notice")</h2>
                 <p>
                     If you are a copyright owner, or authorized on behalf of one, and you believe that the copyrighted work has been copied in a way that constitutes copyright infringement that is taking place through the Service,
-                    you must submit your notice in writing to the attention of "Copyright Agent" via email at <a href="mailto:contact@wify.my">contact@wify.my</a> and include in your notice a detailed description of the alleged Infringement.
+                    you must submit your notice in writing to the attention of "Copyright Agent" via email at <a href="mailto:contact@unstory.app">contact@unstory.app</a> and include in your notice a detailed description of the alleged Infringement.
                 </p>
 
                 <p>
@@ -40,7 +40,7 @@ export default function DMCAPage() {
                     <li>A statement by you, made under penalty of perjury, that the above information in your notice is accurate and that you are the copyright owner or authorized to act on the copyright owner's behalf.</li>
                 </ol>
 
-                <p><strong>Contact Email:</strong> contact@wify.my</p>
+                <p><strong>Contact Email:</strong> contact@unstory.app</p>
             </div>
         </div>
     );

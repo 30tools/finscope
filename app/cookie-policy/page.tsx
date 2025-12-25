@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Cookie Policy | FinScope (wify.my)',
+    title: 'Cookie Policy | FinScope (unstory.app)',
     description: 'Information about how we use cookies.',
 };
 
@@ -15,7 +15,7 @@ export default function CookiePolicyPage() {
                 <h1 className="mt-6">Cookie Policy</h1>
 
                 <p>
-                    This is the Cookie Policy for wify.my, accessible from https://wify.my
+                    This is the Cookie Policy for unstory.app, accessible from https://unstory.app
                 </p>
 
                 <h2>What Are Cookies</h2>
@@ -46,7 +46,7 @@ export default function CookiePolicyPage() {
                 <p>
                     Hopefully that has clarified things for you. If you are still looking for more information then you can contact us through our preferred contact method:
                 </p>
-                <p>Email: <a href="mailto:contact@wify.my">contact@wify.my</a></p>
+                <p>Email: <a href="mailto:contact@unstory.app">contact@unstory.app</a></p>
             </div>
         </div>
     );

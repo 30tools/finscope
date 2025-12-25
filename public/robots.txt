@@ -2,6 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /private/
 
-Sitemap: https://wify.my/sitemap.xml
-Sitemap: https://wify.my/sitemap2.xml
-Sitemap: https://wify.my/sitemap4.xml
+Sitemap: https://unstory.app/sitemap.xml
+Sitemap: https://unstory.app/sitemap2.xml
+Sitemap: https://unstory.app/sitemap4.xml

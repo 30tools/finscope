@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Terms of Service | FinScope (wify.my)',
-    description: 'Terms and conditions for using wify.my',
+    title: 'Terms of Service | FinScope (unstory.app)',
+    description: 'Terms and conditions for using unstory.app',
 };
 
 export default function TermsPage() {
@@ -17,19 +17,19 @@ export default function TermsPage() {
 
                 <h2>1. Acceptance of Terms</h2>
                 <p>
-                    By accessing and using <strong>wify.my</strong> ("the Site"), you accept and agree to be bound by the terms and provision of this agreement.
+                    By accessing and using <strong>unstory.app</strong> ("the Site"), you accept and agree to be bound by the terms and provision of this agreement.
                     If you do not agree to abide by these terms, please do not use this service.
                 </p>
 
                 <h2>2. Informational Purpose Only</h2>
                 <p>
-                    The content provided on <strong>wify.my</strong> is for informational and educational purposes only. It does not constitute professional financial, legal, or investment advice.
+                    The content provided on <strong>unstory.app</strong> is for informational and educational purposes only. It does not constitute professional financial, legal, or investment advice.
                     Any financial decisions you make are your personal responsibility. We strongly recommend consulting with a qualified financial advisor before making significant financial decisions.
                 </p>
 
                 <h2>3. Intellectual Property</h2>
                 <p>
-                    All content, features, and functionality (including but not limited to text, graphics, logos, and software) are the exclusive property of FinScope/wify.my
+                    All content, features, and functionality (including but not limited to text, graphics, logos, and software) are the exclusive property of FinScope/unstory.app
                     and are protected by international copyright, trademark, and other intellectual property laws.
                 </p>
 
@@ -38,7 +38,7 @@ export default function TermsPage() {
 
                 <h2>5. Limitation of Liability</h2>
                 <p>
-                    In no event shall wify.my, its owners, or affiliates be liable for any indirect, incidental, special, consequential or punitive damages arisisng
+                    In no event shall unstory.app, its owners, or affiliates be liable for any indirect, incidental, special, consequential or punitive damages arisisng
                     out of your access to or use of the Site.
                 </p>
 
@@ -49,7 +49,7 @@ export default function TermsPage() {
                 </p>
 
                 <h2>7. Contact</h2>
-                <p>If you have any questions about these Terms, please contact us at <a href="mailto:contact@wify.my">contact@wify.my</a>.</p>
+                <p>If you have any questions about these Terms, please contact us at <a href="mailto:contact@unstory.app">contact@unstory.app</a>.</p>
             </div>
         </div>
     );

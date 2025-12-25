@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Privacy Policy | FinScope (wify.my)',
+    title: 'Privacy Policy | FinScope (unstory.app)',
     description: 'How we collect, use, and protect your data.',
 };
 
@@ -16,8 +16,8 @@ export default function PrivacyPage() {
                 <p className="text-sm text-gray-500">Last Updated: {new Date().toLocaleDateString()}</p>
 
                 <p>
-                    At <strong>wify.my</strong> (accessible from https://wify.my), one of our main priorities is the privacy of our visitors.
-                    This Privacy Policy document contains types of information that is collected and recorded by wify.my and how we use it.
+                    At <strong>unstory.app</strong> (accessible from https://unstory.app), one of our main priorities is the privacy of our visitors.
+                    This Privacy Policy document contains types of information that is collected and recorded by unstory.app and how we use it.
                 </p>
 
                 <h2>1. Information We Collect</h2>
@@ -31,15 +31,15 @@ export default function PrivacyPage() {
 
                 <h2>2. Google DoubleClick DART Cookie</h2>
                 <p>
-                    Google is a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to wify.my and other sites on the internet.
+                    Google is a third-party vendor on our site. It also uses cookies, known as DART cookies, to serve ads to our site visitors based upon their visit to unstory.app and other sites on the internet.
                     However, visitors may choose to decline the use of DART cookies by visiting the Google ad and content network Privacy Policy at the following URL –
                     <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer">https://policies.google.com/technologies/ads</a>
                 </p>
 
                 <h2>3. Advertising Partners Privacy Policies</h2>
                 <p>
-                    You may consult this list to find the Privacy Policy for each of the advertising partners of wify.my.
-                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on wify.my.
+                    You may consult this list to find the Privacy Policy for each of the advertising partners of unstory.app.
+                    Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that are used in their respective advertisements and links that appear on unstory.app.
                 </p>
 
                 <h2>4. CCPA Privacy Rights (Do Not Sell My Personal Information)</h2>
@@ -59,7 +59,7 @@ export default function PrivacyPage() {
                 </p>
 
                 <h2>7. Contact Us</h2>
-                <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <a href="mailto:contact@wify.my">contact@wify.my</a>.</p>
+                <p>If you have additional questions or require more information about our Privacy Policy, do not hesitate to contact us at <a href="mailto:contact@unstory.app">contact@unstory.app</a>.</p>
             </div>
         </div>
     );

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Retirement Calculator | FinScope',
         description: 'Plan your financial freedom. Project your 401(k) / IRA balance at retirement age.',
-        url: 'https://wify.my/tools/retirement-calculator',
+        url: 'https://unstory.app/tools/retirement-calculator',
     },
 };
 
