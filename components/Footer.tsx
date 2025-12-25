@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
                 <div>
                     <h3 className="text-white text-lg font-bold mb-4">FinScope</h3>
-                    <p className="text-sm">Your trusted guide to financial freedom. Unbiased reviews and expert advice.</p>
+                    <p className="text-sm">Your trusted guide to financial freedom. Owned and operated by wify.my.</p>
                 </div>
                 <div>
                     <h4 className="text-white font-medium mb-4">Products</h4>
@@ -14,6 +14,7 @@ export default function Footer() {
                         <li><Link href="/credit-cards" className="hover:text-white">Credit Cards</Link></li>
                         <li><Link href="/personal-loans" className="hover:text-white">Personal Loans</Link></li>
                         <li><Link href="/insurance" className="hover:text-white">Insurance</Link></li>
+                        <li><Link href="/tools" className="hover:text-white font-medium text-yellow-500">All Tools</Link></li>
                         <li><Link href="https://finscope-calculators.strivio.world/" className="hover:text-white text-blue-400 font-medium" target="_blank" rel="noopener noreferrer">Free Calculators ↗</Link></li>
                     </ul>
                 </div>
@@ -30,8 +31,11 @@ export default function Footer() {
                     <ul className="space-y-2 text-sm">
                         <li><Link href="/about" className="hover:text-white">About Us</Link></li>
                         <li><Link href="/contact" className="hover:text-white">Contact</Link></li>
-                        <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
                         <li><Link href="/terms" className="hover:text-white">Terms of Use</Link></li>
+                        <li><Link href="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
+                        <li><Link href="/disclaimer" className="hover:text-white">Disclaimer</Link></li>
+                        <li><Link href="/cookie-policy" className="hover:text-white">Cookie Policy</Link></li>
+                        <li><Link href="/dmca" className="hover:text-white">DMCA</Link></li>
                     </ul>
                 </div>
             </div>

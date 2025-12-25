@@ -61,22 +61,17 @@ export default function ToolsHubPage() {
                         <Link
                             key={tool.title}
                             href={tool.href}
-                            className="group relative bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                            className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-6 hover:border-blue-500 dark:hover:border-blue-500 transition-colors"
                         >
-                            <div className={`w-14 h-14 rounded-xl flex items-center justify-center text-2xl mb-6 ${tool.color}`}>
+                            <div className={`w-12 h-12 rounded-lg flex items-center justify-center text-xl mb-4 ${tool.color}`}>
                                 {tool.icon}
                             </div>
-                            <h2 className="text-2xl font-bold text-zinc-900 dark:text-white mb-3 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                            <h2 className="text-xl font-bold text-zinc-900 dark:text-white mb-2">
                                 {tool.title}
                             </h2>
-                            <p className="text-zinc-600 dark:text-zinc-400 text-lg leading-relaxed">
+                            <p className="text-zinc-600 dark:text-zinc-400 text-base leading-relaxed">
                                 {tool.description}
                             </p>
-                            <span className="absolute bottom-8 right-8 text-zinc-300 dark:text-zinc-700 group-hover:text-blue-500 dark:group-hover:text-blue-400 transition-colors">
-                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </span>
                         </Link>
                     ))}
                 </div>
