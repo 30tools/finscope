@@ -75,6 +75,43 @@ export default function ToolsHubPage() {
                         </Link>
                     ))}
                 </div>
+
+                {/* SEO Content Section */}
+                <div className="mt-20 max-w-3xl mx-auto prose prose-blue dark:prose-invert">
+                    <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-6">
+                        Why Use Our Financial Calculators?
+                    </h2>
+                    <p className="text-zinc-600 dark:text-zinc-400 mb-8">
+                        Financial literacy is the key to wealth building. Whether you are planning to buy your first home, trying to get out of debt, or forecasting your retirement, the math matters.
+                        Our suite of free online financial calculators helps you run the numbers before you make big decisions. No sign-ups, no fees—just pure data.
+                    </p>
+
+                    <h2 className="text-3xl font-bold text-zinc-900 dark:text-white mb-6">
+                        Frequently Asked Questions
+                    </h2>
+
+                    <div className="space-y-6">
+                        <div>
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Are these calculators accurate?</h3>
+                            <p className="text-zinc-600 dark:text-zinc-400">
+                                Yes. We use standard financial formulas used by banking institutions. However, they should be used for estimation purposes.
+                                Always consult with a financial advisor for personalized advice.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Do you save my data?</h3>
+                            <p className="text-zinc-600 dark:text-zinc-400">
+                                No. All calculations happen instantly in your browser. We do not store, save, or sell the financial data you input into these tools.
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="text-xl font-semibold text-zinc-900 dark:text-white mb-2">Can I use these for Canadian or UK finance?</h3>
+                            <p className="text-zinc-600 dark:text-zinc-400">
+                                Most tools (like Compound Interest) are universal. However, the Mortgage and Tax calculators are currently optimized for the US and Indian markets.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     );

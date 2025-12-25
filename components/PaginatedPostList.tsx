@@ -1,10 +1,19 @@
 "use client";
 
-import { useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { Post } from "@/lib/posts"; // Ensure this matches your type definition path
+import { Post } from "@/lib/posts";
+import { Suspense } from "react";
 
-export default function PaginatedPostList({
+export default function PaginatedPostList(props: any) {
+    return (
+        <Suspense fallback={<div>Loading...</div>}>
+            <PaginatedPostListContent {...props} />
+        </Suspense>
+    );
+}
+
+function PaginatedPostListContent({
     posts,
     category,
     itemsPerPage = 9
@@ -13,7 +22,11 @@ export default function PaginatedPostList({
     category?: string;
     itemsPerPage?: number;
 }) {
-    const [currentPage, setCurrentPage] = useState(1);
+    const router = useRouter();
+    const searchParams = useSearchParams();
+
+    // Get current page from URL or default to 1
+    const currentPage = Number(searchParams.get("page")) || 1;
 
     const totalPages = Math.ceil(posts.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
@@ -24,7 +37,11 @@ export default function PaginatedPostList({
     };
 
     const handlePageChange = (page: number) => {
-        setCurrentPage(page);
+        // Create new params object to preserve other potential params
+        const params = new URLSearchParams(searchParams.toString());
+        params.set("page", page.toString());
+
+        router.push(`?${params.toString()}`, { scroll: false });
         scrollToTop();
     };
 
