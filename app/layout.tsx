@@ -30,9 +30,9 @@ export default function RootLayout({
                         {
                             "@context": "https://schema.org",
                             "@type": "Organization",
-                            "name": "Unstory",
+                            "name": "FinScope",
                             "url": "https://unstory.app",
-                            "logo": "https://unstory.app/icon.png",
+                            "logo": "https://unstory.app/logo.png",
                             "sameAs": [
                                 "https://unstory.app"
                             ],

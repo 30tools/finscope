@@ -1,6 +1,6 @@
-export const SITE_NAME = "Unstory - Your guide to credit cards, personal loans, and financial freedom.";
+export const SITE_NAME = "FinScope - Comprehensive Financial Analytics & Insights";
 export const SITE_URL = "https://unstory.app";
-export const SITE_DESCRIPTION = "Unstory - Your guide to credit cards, personal loans, and financial freedom.";
+export const SITE_DESCRIPTION = "FinScope - Your ultimate guide to credit cards, personal loans, and financial intelligence.";
 export const TWITTER_HANDLE = "@finscope";
 
 import { Metadata } from "next";
