@@ -14,6 +14,12 @@ const VALID_CATEGORIES = [
     "insurance",
     "tax-saving",
     "banking",
+    "budgeting",
+    "investing",
+    "debt",
+    "earning",
+    "mindset",
+    "saving",
 ];
 
 export function generateStaticParams() {

@@ -34,7 +34,20 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-    const categories = ["credit-cards", "personal-loans", "credit-score", "insurance", "tax-saving", "banking"];
+    const categories = [
+        "credit-cards",
+        "personal-loans",
+        "credit-score",
+        "insurance",
+        "tax-saving",
+        "banking",
+        "budgeting",
+        "investing",
+        "debt",
+        "earning",
+        "mindset",
+        "saving"
+    ];
     const params: { category: string; slug: string }[] = [];
 
     for (const category of categories) {
