@@ -2,7 +2,7 @@ import { ImageResponse } from 'next/og';
 import { getPostBySlug, getAllPosts } from '@/lib/posts';
 
 export const dynamic = 'force-static';
-export const alt = 'FinScope Article';
+export const alt = 'Unstory Article';
 export const size = {
     width: 1200,
     height: 630,
@@ -44,13 +44,13 @@ export default async function Image({ params }: { params: { category: string; sl
                 }}
             >
                 <div style={{ display: 'flex', fontSize: 30, color: '#0284c7', marginBottom: 20, textTransform: 'uppercase', fontWeight: 900, fontFamily: 'sans-serif' }}>
-                    FinScope • {post?.category?.replace(/-/g, ' ')}
+                    Unstory • {post?.category?.replace(/-/g, ' ')}
                 </div>
                 <div style={{ display: 'flex', fontSize: 70, fontWeight: 900, color: '#111', lineHeight: 1.1, marginBottom: 40, fontFamily: 'sans-serif' }}>
                     {post?.title || 'Finance Insights'}
                 </div>
                 <div style={{ display: 'flex', fontSize: 30, color: '#666', fontFamily: 'sans-serif' }}>
-                    By {post?.author || 'FinScope Team'}
+                    By {post?.author || 'Unstory Team'}
                 </div>
             </div>
         ),

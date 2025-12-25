@@ -53,7 +53,7 @@ const TEMPLATE = `---
 title: "{{TITLE}}"
 description: "A comprehensive guide on {{TITLE}}. Learn everything you need to know about this financial topic in 2025."
 category: "{{CATEGORY}}"
-author: "FinScope Team"
+author: "Unstory Team"
 publishedAt: "{{DATE}}"
 updatedAt: "{{DATE}}"
 keywords: ["{{KEYWORD}}", "finance 2025", "money tips"]
@@ -61,7 +61,7 @@ keywords: ["{{KEYWORD}}", "finance 2025", "money tips"]
 
 # {{TITLE}}
 
-*Published on {{DATE}} by FinScope Team*
+*Published on {{DATE}} by Unstory Team*
 
 In today's rapidly changing financial landscape, understanding **{{TITLE}}** is more important than ever. This guide breaks down the key aspects you need to know.
 

@@ -3,11 +3,11 @@ import CompoundInterestCalculator from '@/components/calculators/CompoundInteres
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Compound Interest Calculator 2025 (Daily, Monthly, Yearly) | FinScope',
+    title: 'Compound Interest Calculator 2025 (Daily, Monthly, Yearly) | Unstory',
     description: 'See how your money grows with our interactive Compound Interest Calculator. Model monthly contributions, interest rates, and investment terms.',
     keywords: ['compound interest calculator', 'investment calculator', 'savings growth calculator', 'retirement projection', 'interest on interest'],
     openGraph: {
-        title: 'Compound Interest Calculator | FinScope',
+        title: 'Compound Interest Calculator | Unstory',
         description: 'Visualize the power of compound interest. Calculate your future wealth with monthly contributions.',
         url: 'https://unstory.app/tools/compound-interest-calculator',
     },

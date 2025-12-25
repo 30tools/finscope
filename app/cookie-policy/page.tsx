@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Cookie Policy | FinScope (unstory.app)',
+    title: 'Cookie Policy | Unstory (unstory.app)',
     description: 'Information about how we use cookies.',
 };
 

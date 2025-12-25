@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: { category: string 
     const category = (await params).category;
     if (!VALID_CATEGORIES.includes(category)) return {};
 
-    const title = `${category.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Guides | FinScope`;
+    const title = `${category.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Guides | Unstory`;
     return constructMetadata({
         title,
         description: `Read the best guides and tips about ${category.replace("-", " ")}.`,

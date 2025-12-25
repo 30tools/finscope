@@ -5,7 +5,7 @@ export default function Footer() {
         <footer className="bg-gray-900 text-gray-300 py-12 mt-20">
             <div className="container mx-auto px-4 grid md:grid-cols-4 gap-8">
                 <div>
-                    <h3 className="text-white text-lg font-bold mb-4">FinScope</h3>
+                    <h3 className="text-white text-lg font-bold mb-4">Unstory</h3>
                     <p className="text-sm">Your trusted guide to financial freedom. Owned and operated by unstory.app.</p>
                 </div>
                 <div>
@@ -40,7 +40,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="container mx-auto px-4 border-t border-gray-800 mt-12 pt-8 text-sm text-center">
-                © {new Date().getFullYear()} FinScope. All rights reserved.
+                © {new Date().getFullYear()} Unstory. All rights reserved.
             </div>
         </footer>
     );

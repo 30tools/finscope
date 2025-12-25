@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Contact Us | FinScope',
-    description: 'Get in touch with the FinScope team.',
+    title: 'Contact Us | Unstory',
+    description: 'Get in touch with the Unstory team.',
 };
 
 export default function ContactPage() {
@@ -26,14 +26,14 @@ export default function ContactPage() {
 
                     <div className="bg-gray-50 p-8 rounded-xl border border-gray-100">
                         <h2 className="text-xl font-bold mb-4 text-gray-900">Advertising & Partnerships</h2>
-                        <p className="mb-2 text-gray-600">Interested in working with FinScope?</p>
+                        <p className="mb-2 text-gray-600">Interested in working with Unstory?</p>
                         <a href="mailto:ads@unstory.app" className="text-blue-600 font-bold hover:underline text-lg">ads@unstory.app</a>
                     </div>
                 </div>
 
                 <div className="mt-12 text-sm text-gray-500">
                     <p>Mailing Address:</p>
-                    <p>FinScope Digital Media</p>
+                    <p>Unstory Digital Media</p>
                     <p>Kuala Lumpur, Malaysia</p>
                 </div>
             </div>

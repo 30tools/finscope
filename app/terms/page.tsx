@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Terms of Service | FinScope (unstory.app)',
+    title: 'Terms of Service | Unstory (unstory.app)',
     description: 'Terms and conditions for using unstory.app',
 };
 
@@ -29,7 +29,7 @@ export default function TermsPage() {
 
                 <h2>3. Intellectual Property</h2>
                 <p>
-                    All content, features, and functionality (including but not limited to text, graphics, logos, and software) are the exclusive property of FinScope/unstory.app
+                    All content, features, and functionality (including but not limited to text, graphics, logos, and software) are the exclusive property of Unstory/unstory.app
                     and are protected by international copyright, trademark, and other intellectual property laws.
                 </p>
 

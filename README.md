@@ -1,6 +1,6 @@
-# FinScope
+# Unstory
 
-FinScope is a modern, static-first finance blog built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **MDX**. It is designed for high performance, maximum SEO, and seamless deployment on **Cloudflare Pages**.
+Unstory is a modern, static-first finance blog built with **Next.js 15 (App Router)**, **Tailwind CSS**, and **MDX**. It is designed for high performance, maximum SEO, and seamless deployment on **Cloudflare Pages**.
 
 ## 🚀 Features
 

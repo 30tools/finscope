@@ -4,7 +4,7 @@ import { getRecentPosts } from '@/lib/posts';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Latest Financial News & Insights | FinScope',
+    title: 'Latest Financial News & Insights | Unstory',
     description: 'Stay updated with the latest trends in personal finance, credit cards, banking, and insurance.',
 };
 

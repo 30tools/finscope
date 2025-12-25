@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: Props) {
     if (!post) return {};
 
     return constructMetadata({
-        title: `${post.title} | FinScope`,
+        title: `${post.title} | Unstory`,
         description: post.description,
         image: `/og-image.jpg`, // Dynamic OG image generation can be added later
     });

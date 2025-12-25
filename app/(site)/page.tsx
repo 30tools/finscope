@@ -23,7 +23,7 @@ export default function Home() {
             <section className="bg-gray-50 border-b border-gray-200">
                 <div className="max-w-4xl mx-auto px-6 py-20 text-center">
                     <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
-                        FinScope
+                        Unstory
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         Your daily scope into the world of finance. Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor.

@@ -71,7 +71,7 @@ const generateContent = (article) => {
 title: "${article.title}"
 description: "A comprehensive analysis of ${article.title}. Discover key benefits, potential drawbacks, and expert recommendations for 2025."
 category: "${article.category}"
-author: "FinScope Team"
+author: "Unstory Team"
 publishedAt: "${date}"
 updatedAt: "${date}"
 keywords: ${JSON.stringify(article.keywords)}
@@ -79,7 +79,7 @@ keywords: ${JSON.stringify(article.keywords)}
 
 # ${article.title}
 
-*Published on ${new Date().toLocaleDateString()} by FinScope Team*
+*Published on ${new Date().toLocaleDateString()} by Unstory Team*
 
 In the rapidly evolving landscape of personal finance, **${article.title}** has emerged as a critical topic for 2025. Whether you are looking to maximize rewards, save on interest, or secure your financial future, understanding the nuances of this subject is essential.
 

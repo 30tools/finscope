@@ -68,7 +68,7 @@ function PaginatedPostListContent({
                             </p>
                             <div className="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">
                                 <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
-                                <span>{post.author || 'FinScope Team'}</span>
+                                <span>{post.author || 'Unstory Team'}</span>
                             </div>
                         </article>
                     </Link>

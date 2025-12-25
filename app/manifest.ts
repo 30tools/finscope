@@ -4,8 +4,8 @@ export const dynamic = 'force-static';
 
 export default function manifest(): MetadataRoute.Manifest {
     return {
-        name: 'FinScope',
-        short_name: 'FinScope',
+        name: 'Unstory',
+        short_name: 'Unstory',
         description: 'Your guide to credit cards, personal loans, and financial freedom.',
         start_url: '/',
         display: 'standalone',

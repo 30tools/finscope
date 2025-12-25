@@ -3,11 +3,11 @@ import LoanCalculator from '@/components/calculators/LoanCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Free Loan Calculator 2025 (Personal, Auto, Business) | FinScope',
+    title: 'Free Loan Calculator 2025 (Personal, Auto, Business) | Unstory',
     description: 'Calculate monthly payments for personal loans, auto loans, or business financing. See your total interest cost and amortization schedule.',
     keywords: ['loan calculator', 'personal loan calculator', 'auto loan estimator', 'calculate monthly payment', 'interest calculator'],
     openGraph: {
-        title: 'Free Loan Calculator 2025 | FinScope',
+        title: 'Free Loan Calculator 2025 | Unstory',
         description: 'Instant monthly payment estimates for any loan type. Visual amortization chart included.',
         url: 'https://unstory.app/tools/loan-calculator',
     },

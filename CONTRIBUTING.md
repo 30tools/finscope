@@ -1,6 +1,6 @@
-# Contributing to FinScope
+# Contributing to Unstory
 
-Thank you for your interest in contributing to FinScope! We welcome contributions from the community to help make this project better.
+Thank you for your interest in contributing to Unstory! We welcome contributions from the community to help make this project better.
 
 ## 🤝 How to Contribute
 

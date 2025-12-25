@@ -3,11 +3,11 @@ import MortgageCalculator from '@/components/calculators/MortgageCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Free Mortgage Calculator 2025 (with Taxes & Insurance) | FinScope',
+    title: 'Free Mortgage Calculator 2025 (with Taxes & Insurance) | Unstory',
     description: 'Calculate your monthly mortgage payment with our accurate 2025 Mortgage Calculator. Includes property tax, home insurance, HOA fees, and PMI estimates.',
     keywords: ['mortgage calculator with taxes', 'home loan calculator', 'monthly mortgage payment', 'amortization calculator'],
     openGraph: {
-        title: 'Free Mortgage Calculator 2025 | FinScope',
+        title: 'Free Mortgage Calculator 2025 | Unstory',
         description: 'Estimate your monthly home payments accurately. Includes updated 2025 tax and insurance rates.',
         url: 'https://unstory.app/tools/mortgage-calculator',
     },

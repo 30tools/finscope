@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'DMCA Policy | FinScope (unstory.app)',
+    title: 'DMCA Policy | Unstory (unstory.app)',
     description: 'Digital Millennium Copyright Act Notice',
 };
 

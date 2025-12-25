@@ -2,11 +2,11 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-    title: 'Free Financial Calculators & Tools (2025 Edition) | FinScope',
+    title: 'Free Financial Calculators & Tools (2025 Edition) | Unstory',
     description: 'Access our suite of free financial calculators. Plan your mortgage, calculate loan payments, forecast retirement, and track compound interest.',
     keywords: ['financial calculators', 'free finance tools', 'mortgage calculator', 'retirement planner'],
     openGraph: {
-        title: 'Free Financial Calculators | FinScope',
+        title: 'Free Financial Calculators | Unstory',
         description: 'Plan your financial future with our suite of free tools.',
         url: 'https://unstory.app/tools',
     },

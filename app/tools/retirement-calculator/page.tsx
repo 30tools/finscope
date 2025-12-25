@@ -3,11 +3,11 @@ import RetirementCalculator from '@/components/calculators/RetirementCalculator'
 import Breadcrumbs from '@/components/Breadcrumbs';
 
 export const metadata: Metadata = {
-    title: 'Retirement Calculator 2025 (401k & IRA Projection) | FinScope',
+    title: 'Retirement Calculator 2025 (401k & IRA Projection) | Unstory',
     description: 'Will you have enough to retire? Use our free Retirement Calculator to project your nest egg based on savings, age, and investment returns.',
     keywords: ['retirement calculator', '401k calculator', 'retirement savings estimator', 'nest egg calculator', 'how much to retire'],
     openGraph: {
-        title: 'Retirement Calculator | FinScope',
+        title: 'Retirement Calculator | Unstory',
         description: 'Plan your financial freedom. Project your 401(k) / IRA balance at retirement age.',
         url: 'https://unstory.app/tools/retirement-calculator',
     },

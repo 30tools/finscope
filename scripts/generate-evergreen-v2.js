@@ -55,7 +55,7 @@ const generateContent = (article) => {
 title: "${article.title}"
 description: "Master ${article.title} with our definitive 2025 guide. Learn the expert strategies, hidden benefits, and common pitfalls of this financial pillar."
 category: "${article.category}"
-author: "FinScope Strategy Team"
+author: "Unstory Strategy Team"
 publishedAt: "${date}"
 updatedAt: "${date}"
 keywords: ${JSON.stringify(article.keywords)}
@@ -63,7 +63,7 @@ keywords: ${JSON.stringify(article.keywords)}
 
 # ${article.title}
 
-*Published on ${new Date().toLocaleDateString()} by FinScope Strategy Team*
+*Published on ${new Date().toLocaleDateString()} by Unstory Strategy Team*
 
 In today's complex financial world, staying ahead requires more than just basic knowledge. **${article.title}** represents a sophisticated but reachable goal for anyone looking to optimize their wealth. 
 
@@ -126,7 +126,7 @@ Many believe it requires a six-figure income to start. In reality, the most succ
 Actually, **${article.title}** is one of the best hedges against inflation if implemented with a growth-focused mindset.
 
 ### Is professional help required?
-While a fiduciary can help, 90% of the work can be done through self-education and disciplined action using tools like FinScope.
+While a fiduciary can help, 90% of the work can be done through self-education and disciplined action using tools like Unstory.
 
 ### What are the tax implications?
 Depending on the ${article.category}, the tax benefits can be significant (e.g., HSA or Roth IRA strategies). Always consult with a tax professional for your specific situation.
