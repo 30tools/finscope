@@ -20,6 +20,8 @@ const VALID_CATEGORIES = [
     "earning",
     "mindset",
     "saving",
+    "wealth-building",
+    "career",
 ];
 
 export function generateStaticParams() {

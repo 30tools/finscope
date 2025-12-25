@@ -46,7 +46,9 @@ export async function generateStaticParams() {
         "debt",
         "earning",
         "mindset",
-        "saving"
+        "saving",
+        "wealth-building",
+        "career"
     ];
     const params: { category: string; slug: string }[] = [];
 
