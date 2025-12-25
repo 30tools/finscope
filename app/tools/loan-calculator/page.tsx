@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Free Loan Calculator 2025 | FinScope',
         description: 'Instant monthly payment estimates for any loan type. Visual amortization chart included.',
-        url: 'https://finscope.strivio.world/tools/loan-calculator',
+        url: 'https://wify.my/tools/loan-calculator',
     },
 };
 

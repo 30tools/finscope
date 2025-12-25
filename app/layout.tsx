@@ -25,6 +25,25 @@ export default function RootLayout({
                     crossOrigin="anonymous"
                     strategy="afterInteractive"
                 />
+                <Script id="organization-schema" type="application/ld+json">
+                    {`
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "Organization",
+                            "name": "FinScope",
+                            "url": "https://wify.my",
+                            "logo": "https://wify.my/icon.png",
+                            "sameAs": [
+                                "https://wify.my"
+                            ],
+                            "contactPoint": {
+                                "@type": "ContactPoint",
+                                "email": "contact@wify.my",
+                                "contactType": "customer support"
+                            }
+                        }
+                    `}
+                </Script>
                 <div className="flex flex-col min-h-screen">
                     <Header />
                     <main className="flex-grow">

@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Compound Interest Calculator | FinScope',
         description: 'Visualize the power of compound interest. Calculate your future wealth with monthly contributions.',
-        url: 'https://finscope.strivio.world/tools/compound-interest-calculator',
+        url: 'https://wify.my/tools/compound-interest-calculator',
     },
 };
 

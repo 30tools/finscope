@@ -8,7 +8,7 @@ import { Metadata } from "next";
 export function constructMetadata({
     title = SITE_NAME,
     description = SITE_DESCRIPTION,
-    image = "https://finscope.strivio.world/og-image.jpg",
+    image = "https://wify.my/og-image.jpg",
     icons = "/favicon.ico",
     noIndex = false,
 }: {
