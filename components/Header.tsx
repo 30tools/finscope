@@ -9,8 +9,9 @@ export default function Header() {
                 </Link>
                 <nav className="hidden md:flex gap-6 text-sm font-medium text-gray-600">
                     <Link href="/credit-cards" className="hover:text-blue-600 transition">Credit Cards</Link>
-                    <Link href="/personal-loans" className="hover:text-blue-600 transition">Personal Loans</Link>
-                    <Link href="/credit-score" className="hover:text-blue-600 transition">Credit Score</Link>
+                    <Link href="/personal-loans" className="text-sm font-medium hover:text-blue-600 transition-colors">Personal Loans</Link>
+                    <Link href="/food" className="text-sm font-medium hover:text-blue-600 transition-colors">Food</Link>
+                    <Link href="/tools" className="text-sm font-medium hover:text-blue-600 transition-colors">Tools</Link>
                     <Link href="/insurance" className="hover:text-blue-600 transition">Insurance</Link>
                     <Link href="/tax-saving" className="hover:text-blue-600 transition">Tax Saving</Link>
                 </nav>

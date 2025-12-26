@@ -23,6 +23,7 @@ const VALID_CATEGORIES = [
     "saving",
     "wealth-building",
     "career",
+    "food",
 ];
 
 export function generateStaticParams() {
