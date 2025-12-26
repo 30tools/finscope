@@ -9,6 +9,7 @@ export function generateArticleSchema({
     updatedAt,
     author,
     image,
+    isNews = false,
 }: {
     title: string;
     description: string;
@@ -18,22 +19,24 @@ export function generateArticleSchema({
     updatedAt: string;
     author: string;
     image?: string;
+    isNews?: boolean;
 }) {
     return {
         "@context": "https://schema.org",
-        "@type": "Article",
+        "@type": isNews ? "NewsArticle" : "Article",
         headline: title,
         description: description,
-        image: image ? [`${SITE_URL}${image}`] : [`${SITE_URL}/og-image.jpg`],
+        image: image ? [image] : [`${SITE_URL}/og-image.jpg`],
         datePublished: publishedAt,
         dateModified: updatedAt,
         author: {
             "@type": "Person",
             name: author,
+            url: `${SITE_URL}/about`, // Link to author page
         },
         publisher: {
             "@type": "Organization",
-            name: SITE_NAME,
+            name: "Unstory",
             logo: {
                 "@type": "ImageObject",
                 url: `${SITE_URL}/logo.png`,
@@ -113,5 +116,29 @@ export function generateReviewSchema({
             ratingValue: rating,
             bestRating: 5,
         },
+    };
+}
+
+export function generateAuthorSchema({
+    name,
+    description,
+    jobTitle,
+    url,
+    sameAs = [],
+}: {
+    name: string;
+    description: string;
+    jobTitle: string;
+    url: string;
+    sameAs?: string[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name,
+        description,
+        jobTitle,
+        url,
+        sameAs,
     };
 }

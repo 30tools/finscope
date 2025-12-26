@@ -12,6 +12,8 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { cn } from "@/lib/utils";
+import AuthorBio from "@/components/AuthorBio";
+import { SITE_URL } from "@/lib/seo";
 
 // Custom components for MDX
 const components = {
@@ -68,10 +70,12 @@ export async function generateMetadata({ params }: Props) {
 
     if (!post) return {};
 
+    const ogImage = `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${SITE_URL}/${category}/${slug}`)}/opengraph/`;
+
     return constructMetadata({
         title: `${post.title} | Unstory`,
         description: post.description,
-        image: `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL}/${category}/${slug}`)}/opengraph/`,
+        image: ogImage,
     });
 }
 
@@ -113,6 +117,8 @@ export default async function ArticlePage({ params }: Props) {
                         publishedAt: post.publishedAt,
                         updatedAt: post.updatedAt,
                         author: post.author,
+                        image: `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${SITE_URL}/${category}/${slug}`)}/opengraph/`,
+                        isNews: true,
                     })),
                 }}
             />
@@ -143,9 +149,15 @@ export default async function ArticlePage({ params }: Props) {
                         {post.title}
                     </h1>
                     <div className="flex items-center text-gray-500 text-sm space-x-4">
-                        <span>By {post.author}</span>
+                        <span className="font-medium text-gray-900">By {post.author}</span>
                         <span>•</span>
-                        <time dateTime={post.publishedAt}>{new Date(post.publishedAt).toLocaleDateString()}</time>
+                        <time dateTime={post.publishedAt}>Published: {new Date(post.publishedAt).toLocaleDateString()}</time>
+                        {post.updatedAt !== post.publishedAt && (
+                            <>
+                                <span>•</span>
+                                <time dateTime={post.updatedAt} className="text-blue-600 font-medium italic">Updated: {new Date(post.updatedAt).toLocaleDateString()}</time>
+                            </>
+                        )}
                     </div>
                 </header>
 
@@ -166,6 +178,14 @@ export default async function ArticlePage({ params }: Props) {
                         components={components}
                     />
                 </ArticleLayout>
+
+                <AuthorBio
+                    name={post.author}
+                    role="Senior Financial Analyst"
+                    bio="Expert in personal finance, wealth building strategies, and the FIRE movement. Helping thousands write their own financial Unstory."
+                    twitter="https://twitter.com/unstoryapp"
+                    linkedin="https://linkedin.com/company/unstory"
+                />
 
                 <div className="max-w-4xl mx-auto mt-12 pt-8 border-t border-gray-200">
                     <h3 className="text-2xl font-bold mb-6 text-gray-900">Related Articles</h3>
