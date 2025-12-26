@@ -4,7 +4,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { constructMetadata } from "@/lib/seo";
-import { generateArticleSchema, generateBreadcrumbSchema, generateReviewSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema, generateReviewSchema, generateSpeakableSchema } from "@/lib/schema";
 import ArticleLayout from "@/components/ArticleLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
@@ -126,6 +126,12 @@ export default async function ArticlePage({ params }: Props) {
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
                     __html: JSON.stringify(generateBreadcrumbSchema(breadcrumbs.map(b => ({ name: b.name, item: b.href })))),
+                }}
+            />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateSpeakableSchema(['h1', '.prose p:first-of-type'])),
                 }}
             />
             {['credit-cards', 'personal-loans', 'banking'].includes(post.category) && (

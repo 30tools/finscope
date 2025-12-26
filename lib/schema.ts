@@ -142,3 +142,11 @@ export function generateAuthorSchema({
         sameAs,
     };
 }
+
+export function generateSpeakableSchema(cssSelectors: string[]) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "SpeakableSpecification",
+        "cssSelector": cssSelectors,
+    };
+}
