@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import RetirementCalculator from '@/components/calculators/RetirementCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateWebApplicationSchema } from '@/lib/schema';
+import { SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Retirement Calculator 2025 (401k & IRA Projection) | Unstory',
@@ -16,6 +18,16 @@ export const metadata: Metadata = {
 export default function RetirementCalculatorPage() {
     return (
         <div className="bg-white dark:bg-zinc-950 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateWebApplicationSchema({
+                        name: "Retirement Calculator",
+                        description: "Will you have enough to retire? Use our free Retirement Calculator to project your nest egg based on savings, age, and investment returns.",
+                        url: `${SITE_URL}/tools/retirement-calculator`,
+                    })),
+                }}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <Breadcrumbs
                     items={[

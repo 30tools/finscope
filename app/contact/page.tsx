@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateContactPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
     title: 'Contact Us | Unstory',
@@ -10,6 +11,12 @@ export default function ContactPage() {
     return (
         <div className="bg-white dark:bg-zinc-950 min-h-screen">
             <div className="container mx-auto px-4 py-12 max-w-4xl">
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(generateContactPageSchema()),
+                    }}
+                />
                 <Breadcrumbs items={[{ name: "Contact", href: "/contact" }]} />
 
                 <h1 className="text-4xl font-bold mb-6 mt-6">Contact Us</h1>

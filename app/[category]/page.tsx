@@ -3,7 +3,8 @@ import PaginatedPostList from "@/components/PaginatedPostList";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { capitalize } from "@/lib/utils"; // We might need to add capitalize to utils or generic
-import { constructMetadata } from "@/lib/seo";
+import { constructMetadata, SITE_URL } from "@/lib/seo";
+import { generateCollectionPageSchema } from "@/lib/schema";
 
 // For now, hardcode valid categories or derive from getAllCategories if strictly dynamic. 
 // However, generateStaticParams needs to know them.
@@ -52,6 +53,21 @@ export default async function CategoryPage({ params }: { params: { category: str
 
     return (
         <div className="container mx-auto px-4 py-12 max-w-5xl">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateCollectionPageSchema({
+                        name: `${capitalize(category.replace(/-/g, " "))} Guides`,
+                        description: `Read the best guides and tips about ${category.replace("-", " ")}.`,
+                        url: `${SITE_URL}/${category}`,
+                        items: posts.map(post => ({
+                            name: post.title,
+                            url: `${SITE_URL}/${category}/${post.slug}`,
+                            description: post.description
+                        }))
+                    })),
+                }}
+            />
             <h1 className="text-4xl font-bold mb-8 capitalize">{category.replace(/-/g, " ")}</h1>
 
             <PaginatedPostList posts={posts} category={category} />

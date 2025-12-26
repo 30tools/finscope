@@ -1,4 +1,4 @@
-import { SITE_NAME, SITE_URL } from "./seo";
+import { SITE_NAME, SITE_URL, SITE_DESCRIPTION } from "./seo";
 
 export function generateArticleSchema({
     title,
@@ -148,5 +148,118 @@ export function generateSpeakableSchema(cssSelectors: string[]) {
         "@context": "https://schema.org",
         "@type": "SpeakableSpecification",
         "cssSelector": cssSelectors,
+    };
+}
+
+export function generateWebSiteSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Unstory",
+        "url": SITE_URL,
+        "description": SITE_DESCRIPTION,
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": `${SITE_URL}/news?q={search_term_string}`,
+            "query-input": "required name=search_term_string"
+        }
+    };
+}
+
+export function generateCollectionPageSchema({
+    name,
+    description,
+    url,
+    items,
+}: {
+    name: string;
+    description: string;
+    url: string;
+    items: { name: string; url: string; description: string }[];
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name,
+        description,
+        url,
+        mainEntity: {
+            "@type": "ItemList",
+            itemListElement: items.map((item, index) => ({
+                "@type": "ListItem",
+                position: index + 1,
+                url: item.url,
+                name: item.name,
+                description: item.description,
+            })),
+        },
+    };
+}
+
+export function generateWebApplicationSchema({
+    name,
+    description,
+    url,
+    category = "FinanceApplication",
+}: {
+    name: string;
+    description: string;
+    url: string;
+    category?: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        name,
+        description,
+        url,
+        applicationCategory: category,
+        operatingSystem: "Any",
+        offers: {
+            "@type": "Offer",
+            price: "0",
+            priceCurrency: "USD",
+        },
+    };
+}
+
+export function generateAboutPageSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: "About Unstory",
+        description: SITE_DESCRIPTION,
+        url: `${SITE_URL}/about`,
+    };
+}
+
+export function generateContactPageSchema() {
+    return {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        name: "Contact Unstory",
+        description: "Get in touch with the Unstory team.",
+        url: `${SITE_URL}/contact`,
+    };
+}
+
+export function generateSiteNavigationSchema() {
+    const navItems = [
+        { name: "Credit Cards", url: `${SITE_URL}/credit-cards` },
+        { name: "Banking", url: `${SITE_URL}/banking` },
+        { name: "Wealth Building", url: `${SITE_URL}/wealth-building` },
+        { name: "Investing", url: `${SITE_URL}/investing` },
+        { name: "Tools", url: `${SITE_URL}/tools` },
+    ];
+
+    return {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "itemListElement": navItems.map((item, index) => ({
+            "@type": "SiteNavigationElement",
+            "position": index + 1,
+            "name": item.name,
+            "url": item.url
+        }))
     };
 }

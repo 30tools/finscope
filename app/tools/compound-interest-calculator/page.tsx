@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import CompoundInterestCalculator from '@/components/calculators/CompoundInterestCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateWebApplicationSchema } from '@/lib/schema';
+import { SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Compound Interest Calculator 2025 (Daily, Monthly, Yearly) | Unstory',
@@ -16,6 +18,16 @@ export const metadata: Metadata = {
 export default function CompoundInterestCalculatorPage() {
     return (
         <div className="bg-white dark:bg-zinc-950 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateWebApplicationSchema({
+                        name: "Compound Interest Calculator",
+                        description: "See how your money grows with our interactive Compound Interest Calculator. Model monthly contributions, interest rates, and investment terms.",
+                        url: `${SITE_URL}/tools/compound-interest-calculator`,
+                    })),
+                }}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <Breadcrumbs
                     items={[

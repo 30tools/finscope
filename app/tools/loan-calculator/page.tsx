@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import LoanCalculator from '@/components/calculators/LoanCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateWebApplicationSchema } from '@/lib/schema';
+import { SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Free Loan Calculator 2025 (Personal, Auto, Business) | Unstory',
@@ -16,6 +18,16 @@ export const metadata: Metadata = {
 export default function LoanCalculatorPage() {
     return (
         <div className="bg-white dark:bg-zinc-950 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateWebApplicationSchema({
+                        name: "Loan Calculator",
+                        description: "Calculate monthly payments for personal loans, auto loans, or business financing. See your total interest cost and amortization schedule.",
+                        url: `${SITE_URL}/tools/loan-calculator`,
+                    })),
+                }}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <Breadcrumbs
                     items={[

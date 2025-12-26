@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { generateAboutPageSchema } from '@/lib/schema';
 
 export const metadata: Metadata = {
     title: 'About Us | Unstory',
@@ -8,6 +9,12 @@ export const metadata: Metadata = {
 export default function AboutPage() {
     return (
         <div className="container mx-auto px-4 py-12 max-w-4xl">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateAboutPageSchema()),
+                }}
+            />
             <h1 className="text-4xl font-bold mb-6">About Unstory</h1>
             <div className="prose prose-lg text-gray-700 leading-relaxed space-y-6">
                 <p>Welcome to Unstory, your trusted guide to navigating the complex world of personal finance.</p>

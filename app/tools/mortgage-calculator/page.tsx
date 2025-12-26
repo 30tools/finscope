@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import MortgageCalculator from '@/components/calculators/MortgageCalculator';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { generateWebApplicationSchema } from '@/lib/schema';
+import { SITE_URL } from '@/lib/seo';
 
 export const metadata: Metadata = {
     title: 'Free Mortgage Calculator 2025 (with Taxes & Insurance) | Unstory',
@@ -16,6 +18,16 @@ export const metadata: Metadata = {
 export default function MortgageCalculatorPage() {
     return (
         <div className="bg-white dark:bg-zinc-950 min-h-screen">
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify(generateWebApplicationSchema({
+                        name: "Mortgage Calculator",
+                        description: "Calculate your monthly mortgage payment with our accurate 2025 Mortgage Calculator. Includes property tax, home insurance, HOA fees, and PMI estimates.",
+                        url: `${SITE_URL}/tools/mortgage-calculator`,
+                    })),
+                }}
+            />
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
                 <Breadcrumbs
                     items={[
