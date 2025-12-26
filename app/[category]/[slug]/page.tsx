@@ -13,6 +13,7 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { cn } from "@/lib/utils";
 import AuthorBio from "@/components/AuthorBio";
+import VisitorBadge from "@/components/VisitorBadge";
 import { SITE_URL } from "@/lib/seo";
 
 // Custom components for MDX
@@ -50,7 +51,11 @@ export async function generateStaticParams() {
         "mindset",
         "saving",
         "wealth-building",
-        "career"
+        "career",
+        "food",
+        "business",
+        "tech",
+        "health"
     ];
     const params: { category: string; slug: string }[] = [];
 
@@ -206,6 +211,7 @@ export default async function ArticlePage({ params }: Props) {
                         }}
                         components={components}
                     />
+                    <VisitorBadge path={`/${category}/${slug}`} />
                 </ArticleLayout>
 
                 <AuthorBio

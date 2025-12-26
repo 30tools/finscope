@@ -1,6 +1,7 @@
 import { getAllPosts } from "@/lib/posts";
 import PaginatedPostList from "@/components/PaginatedPostList";
 import Link from "next/link";
+import VisitorBadge from "@/components/VisitorBadge";
 import { notFound } from "next/navigation";
 import { capitalize } from "@/lib/utils"; // We might need to add capitalize to utils or generic
 import { constructMetadata, SITE_URL } from "@/lib/seo";
@@ -26,6 +27,7 @@ const VALID_CATEGORIES = [
     "food",
     "business",
     "tech",
+    "health",
 ];
 
 export function generateStaticParams() {
@@ -74,6 +76,7 @@ export default async function CategoryPage({ params }: { params: { category: str
             <h1 className="text-4xl font-bold mb-8 capitalize">{category.replace(/-/g, " ")}</h1>
 
             <PaginatedPostList posts={posts} category={category} />
+            <VisitorBadge path={`/${category}`} />
         </div>
     );
 }

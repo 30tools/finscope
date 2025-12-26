@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { getAllCategories, getAllPosts, Post } from "@/lib/posts";
 import PaginatedPostList from "@/components/PaginatedPostList";
+import VisitorBadge from "@/components/VisitorBadge";
 
 export default function Home() {
     const categories = getAllCategories();
@@ -44,6 +45,7 @@ export default function Home() {
                         <p className="text-center text-gray-500 py-10">No articles found. Check back later!</p>
                     )}
                 </div>
+                <VisitorBadge path="" />
             </div>
         </main>
     );

@@ -11,6 +11,9 @@ export default function Header() {
                     <Link href="/credit-cards" className="hover:text-blue-600 transition">Credit Cards</Link>
                     <Link href="/personal-loans" className="text-sm font-medium hover:text-blue-600 transition-colors">Personal Loans</Link>
                     <Link href="/food" className="text-sm font-medium hover:text-blue-600 transition-colors">Food</Link>
+                    <Link href="/business" className="text-sm font-medium hover:text-blue-600 transition-colors">Business</Link>
+                    <Link href="/tech" className="text-sm font-medium hover:text-blue-600 transition-colors">Tech</Link>
+                    <Link href="/health" className="text-sm font-medium hover:text-blue-600 transition-colors">Health</Link>
                     <Link href="/tools" className="text-sm font-medium hover:text-blue-600 transition-colors">Tools</Link>
                     <Link href="/insurance" className="hover:text-blue-600 transition">Insurance</Link>
                     <Link href="/tax-saving" className="hover:text-blue-600 transition">Tax Saving</Link>
