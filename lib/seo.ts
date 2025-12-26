@@ -1,7 +1,7 @@
-export const SITE_NAME = "FinScope - Comprehensive Financial Analytics & Insights";
+export const SITE_NAME = "Unstory - Your guide to financial freedom and building wealth.";
 export const SITE_URL = "https://unstory.app";
-export const SITE_DESCRIPTION = "FinScope - Your ultimate guide to credit cards, personal loans, and financial intelligence.";
-export const TWITTER_HANDLE = "@finscope";
+export const SITE_DESCRIPTION = "Unstory - Deep-dive guides on wealth building, passive income, and achieving financial independence.";
+export const TWITTER_HANDLE = "@unstoryapp";
 
 import { Metadata } from "next";
 
@@ -27,7 +27,7 @@ export function constructMetadata({
             type: "website",
             locale: "en_US",
             url: SITE_URL,
-            siteName: "FinScope",
+            siteName: "Unstory",
             images: [
                 {
                     url: image,
@@ -73,11 +73,11 @@ export function constructMetadata({
                 'application/rss+xml': `${SITE_URL}/feed.xml`,
             },
         },
-        applicationName: "FinScope",
+        applicationName: "Unstory",
         appleWebApp: {
             capable: true,
             statusBarStyle: "default",
-            title: "FinScope",
+            title: "Unstory",
         },
         formatDetection: {
             telephone: false,

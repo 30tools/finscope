@@ -71,7 +71,7 @@ export async function generateMetadata({ params }: Props) {
     return constructMetadata({
         title: `${post.title} | Unstory`,
         description: post.description,
-        image: `/og-image.jpg`, // Dynamic OG image generation can be added later
+        image: `https://v1.screenshot.11ty.dev/${encodeURIComponent(`${process.env.NEXT_PUBLIC_SITE_URL}/${category}/${slug}`)}/opengraph/`,
     });
 }
 
