@@ -11,12 +11,19 @@ export function constructMetadata({
     image = "https://unstory.app/og-image.jpg",
     icons = "/favicon.ico",
     noIndex = false,
+    verification = {},
 }: {
     title?: string;
     description?: string;
     image?: string;
     icons?: string;
     noIndex?: boolean;
+    verification?: {
+        google?: string;
+        yandex?: string;
+        bing?: string;
+        yahoo?: string;
+    };
 } = {}): Metadata {
     return {
         title,
@@ -85,5 +92,6 @@ export function constructMetadata({
         other: {
             "google-adsense-account": "ca-pub-1828915420581549",
         },
+        verification,
     };
 }

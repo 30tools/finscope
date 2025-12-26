@@ -9,7 +9,12 @@ import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = constructMetadata();
+export const metadata: Metadata = constructMetadata({
+    verification: {
+        google: "ca-pub-1828915420581549", // Placeholder, ideally specific verification key
+        bing: "msvalidate.01=3E8B5BD5CB462215F056C7D1B1E63CBE", // Example/Placeholder
+    }
+});
 
 export default function RootLayout({
     children,
