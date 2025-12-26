@@ -263,3 +263,61 @@ export function generateSiteNavigationSchema() {
         }))
     };
 }
+
+export function generateRecipeSchema({
+    title,
+    description,
+    image,
+    author,
+    publishedAt,
+    prepTime,
+    cookTime,
+    totalTime,
+    recipeYield,
+    recipeIngredient,
+    recipeInstructions,
+    recipeCategory,
+    recipeCuisine,
+    keywords,
+}: {
+    title: string;
+    description: string;
+    image: string[];
+    author: string;
+    publishedAt: string;
+    prepTime?: string;
+    cookTime?: string;
+    totalTime?: string;
+    recipeYield?: string;
+    recipeIngredient: string[];
+    recipeInstructions: { text: string; name?: string }[];
+    recipeCategory: string;
+    recipeCuisine?: string;
+    keywords?: string;
+}) {
+    return {
+        "@context": "https://schema.org",
+        "@type": "Recipe",
+        name: title,
+        description: description,
+        image: image,
+        author: {
+            "@type": "Person",
+            name: author,
+        },
+        datePublished: publishedAt,
+        prepTime: prepTime,
+        cookTime: cookTime,
+        totalTime: totalTime,
+        recipeYield: recipeYield,
+        recipeCategory: recipeCategory,
+        recipeCuisine: recipeCuisine,
+        recipeIngredient: recipeIngredient,
+        recipeInstructions: recipeInstructions.map((step) => ({
+            "@type": "HowToStep",
+            name: step.name,
+            text: step.text,
+        })),
+        keywords: keywords,
+    };
+}

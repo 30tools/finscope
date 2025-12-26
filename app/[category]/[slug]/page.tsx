@@ -4,7 +4,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { constructMetadata } from "@/lib/seo";
-import { generateArticleSchema, generateBreadcrumbSchema, generateReviewSchema, generateSpeakableSchema } from "@/lib/schema";
+import { generateArticleSchema, generateBreadcrumbSchema, generateReviewSchema, generateSpeakableSchema, generateRecipeSchema } from "@/lib/schema";
 import ArticleLayout from "@/components/ArticleLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import AdSlot from "@/components/AdSlot";
@@ -142,6 +142,29 @@ export default async function ArticlePage({ params }: Props) {
                             title: post.title,
                             author: post.author,
                             rating: 4.5
+                        })),
+                    }}
+                />
+            )}
+            {post.category === 'food' && post.recipeIngredient && (
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify(generateRecipeSchema({
+                            title: post.title,
+                            description: post.description,
+                            image: [`https://v1.screenshot.11ty.dev/${encodeURIComponent(`${SITE_URL}/${category}/${slug}`)}/opengraph/`],
+                            author: post.author,
+                            publishedAt: post.publishedAt,
+                            prepTime: post.prepTime,
+                            cookTime: post.cookTime,
+                            totalTime: post.totalTime,
+                            recipeYield: post.recipeYield,
+                            recipeIngredient: post.recipeIngredient,
+                            recipeInstructions: post.recipeInstructions || [],
+                            recipeCategory: post.recipeCategory || 'Healthy Food',
+                            recipeCuisine: post.recipeCuisine || 'General',
+                            keywords: post.keywords.join(', ')
                         })),
                     }}
                 />

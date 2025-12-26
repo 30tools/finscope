@@ -14,6 +14,15 @@ export interface Post {
     publishedAt: string;
     updatedAt: string;
     keywords: string[];
+    // Recipe specific fields (Optional)
+    prepTime?: string;
+    cookTime?: string;
+    totalTime?: string;
+    recipeYield?: string;
+    recipeIngredient?: string[];
+    recipeInstructions?: { text: string; name?: string }[];
+    recipeCuisine?: string;
+    recipeCategory?: string;
 }
 
 export function getPostSlugs(category: string) {
@@ -47,6 +56,15 @@ export function getPostBySlug(category: string, slug: string): Post | null {
         publishedAt: data.publishedAt ? new Date(data.publishedAt).toISOString() : new Date().toISOString(),
         updatedAt: data.updatedAt ? new Date(data.updatedAt).toISOString() : new Date().toISOString(),
         keywords: data.keywords || [],
+        // Recipe fields
+        prepTime: data.prepTime,
+        cookTime: data.cookTime,
+        totalTime: data.totalTime,
+        recipeYield: data.recipeYield,
+        recipeIngredient: data.recipeIngredient,
+        recipeInstructions: data.recipeInstructions,
+        recipeCuisine: data.recipeCuisine,
+        recipeCategory: data.recipeCategory,
     };
 }
 
