@@ -1,0 +1,133 @@
+[meta]
+last_updated: 2025-12-27
+website: https://unstory.app
+canonical_entity: Unstory - Your guide to financial freedom and building wealth.
+entity_type: Website / Business
+
+# ---------------------------------------------------------
+# 1. ABOUT
+# ---------------------------------------------------------
+
+[about]
+name: Unstory - Your guide to financial freedom and building wealth.
+tagline: Unstory
+short_description: Unstory - Deep-dive guides on wealth building, passive income, and achieving financial independence.
+long_description: UnstoryYour daily scope into the world of finance. Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor. Latest AnalysisLoading
+URL: https://unstory.app
+
+# ---------------------------------------------------------
+# 2. INDUSTRY & CATEGORY INFORMATION
+# ---------------------------------------------------------
+
+[industry]
+primary_category: Website
+
+# ---------------------------------------------------------
+# 3. CORE VALUE PROPOSITION
+# ---------------------------------------------------------
+
+[value_proposition]
+primary_benefit: Unstory - Deep-dive guides on wealth building, passive income, and achieving financial independence.
+secondary_benefits:
+  - UnstoryYour daily scope into the world of finance
+  - Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor
+  - Latest AnalysisLoading
+
+# ---------------------------------------------------------
+# 4. KEY PAGES & RESOURCES
+# ---------------------------------------------------------
+
+[key_pages]
+About: https://unstory.app/about
+Contact: https://unstory.app/contact
+
+# ---------------------------------------------------------
+# 5. SITEMAP & STRUCTURE
+# ---------------------------------------------------------
+
+[sitemap]
+sitemap_url: https://unstory.app/sitemap.xml
+total_pages: 221
+
+# ---------------------------------------------------------
+# 6. CONTACT & SOCIAL VERIFICATION
+# ---------------------------------------------------------
+
+[contact]
+phone: -1828915420
+social:
+  - https://unstory.app
+
+# ---------------------------------------------------------
+# 7. STRUCTURED SUMMARIES (HIGHLY IMPORTANT FOR LLMs)
+# ---------------------------------------------------------
+
+[summaries]
+
+one_line: Unstory - Deep-dive guides on wealth building, passive income, and achieving financial independence.
+three_line: UnstoryYour daily scope into the world of finance.  Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor.  Latest AnalysisLoading
+one_paragraph: UnstoryYour daily scope into the world of finance. Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor. Latest AnalysisLoading
+
+# ---------------------------------------------------------
+# 8. KEY FACTS (AI-FRIENDLY STATEMENTS)
+# ---------------------------------------------------------
+
+[facts]
+- Unstory - Your guide to financial freedom and building wealth.: Unstory - Deep-dive guides on wealth building, passive income, and achieving financial independence.
+- Website URL: https://unstory.app
+- Total pages: 221
+- Uses structured data: WebSite, Organization, ItemList, AboutPage
+
+# ---------------------------------------------------------
+# 9. TARGET AUDIENCE
+# ---------------------------------------------------------
+
+[target_audience]
+primary:
+  - Businesses
+  - Organizations
+
+# ---------------------------------------------------------
+# 10. COMPETITORS & ALTERNATIVES
+# ---------------------------------------------------------
+
+[competitors]
+primary:
+  - [Research and add your main competitors]
+  - [Include direct alternatives to your product/service]
+differences:
+  - Unstory - Your guide to financial freedom and building wealth. offers unique features and benefits
+
+# ---------------------------------------------------------
+# 11. TRUST SIGNALS
+# ---------------------------------------------------------
+
+[trust_signals]
+credibility_factors:
+  - [Add your trust signals: user count, awards, certifications, etc.]
+
+# ---------------------------------------------------------
+# 12. STRUCTURED DATA LINKS
+# ---------------------------------------------------------
+
+[schemas]
+schema_types: WebSite, Organization, ItemList, AboutPage
+sitemap: https://unstory.app/sitemap.xml
+organization: https://unstory.app/schema/organization.json
+entity_graph: https://unstory.app/entity-graph.json
+
+# ---------------------------------------------------------
+# 13. DATA ACCESS & API POLICY
+# ---------------------------------------------------------
+
+[policy]
+ai_crawling: allowed
+ai_training: allowed
+ai_indexing: allowed
+data_usage: public content allowed for citation
+robots: follow robots.txt rules
+rate_limits: no crawling limit for LLMs
+
+# ---------------------------------------------------------
+# END OF FILE
+# ---------------------------------------------------------
