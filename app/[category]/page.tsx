@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts, getAllCategories } from "@/lib/posts";
 import PaginatedPostList from "@/components/PaginatedPostList";
 import Link from "next/link";
 import VisitorBadge from "@/components/VisitorBadge";
@@ -7,38 +7,23 @@ import { capitalize } from "@/lib/utils"; // We might need to add capitalize to 
 import { constructMetadata, SITE_URL } from "@/lib/seo";
 import { generateCollectionPageSchema } from "@/lib/schema";
 
-// For now, hardcode valid categories or derive from getAllCategories if strictly dynamic. 
-// However, generateStaticParams needs to know them.
-const VALID_CATEGORIES = [
-    "credit-cards",
-    "personal-loans",
-    "credit-score",
-    "insurance",
-    "tax-saving",
-    "banking",
-    "budgeting",
-    "investing",
-    "debt",
-    "earning",
-    "mindset",
-    "saving",
-    "wealth-building",
-    "career",
-    "food",
-    "business",
-    "tech",
-    "health",
-];
+const getCategories = () => {
+    return getAllCategories();
+};
 
 export function generateStaticParams() {
-    return VALID_CATEGORIES.map((category) => ({
+    const categories = getCategories();
+    return categories.map((category) => ({
         category,
     }));
 }
 
 export async function generateMetadata({ params }: { params: { category: string } }) {
     const category = (await params).category;
-    if (!VALID_CATEGORIES.includes(category)) return {};
+    // You can add validation here if needed, but since we are generating from existing folders, it might be redundant for SSG.
+    // Ideally, check if category exists.
+    const categories = getCategories();
+    if (!categories.includes(category)) return {};
 
     const title = `${category.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} Guides | Unstory`;
     return constructMetadata({
@@ -49,8 +34,9 @@ export async function generateMetadata({ params }: { params: { category: string 
 
 export default async function CategoryPage({ params }: { params: { category: string } }) {
     const category = (await params).category;
+    const categories = getCategories();
 
-    if (!VALID_CATEGORIES.includes(category)) {
+    if (!categories.includes(category)) {
         notFound();
     }
 

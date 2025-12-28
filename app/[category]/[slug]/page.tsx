@@ -1,4 +1,4 @@
-import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/posts";
+import { getAllPosts, getPostBySlug, getRelatedPosts, getAllCategories } from "@/lib/posts";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -37,26 +37,7 @@ type Props = {
 };
 
 export async function generateStaticParams() {
-    const categories = [
-        "credit-cards",
-        "personal-loans",
-        "credit-score",
-        "insurance",
-        "tax-saving",
-        "banking",
-        "budgeting",
-        "investing",
-        "debt",
-        "earning",
-        "mindset",
-        "saving",
-        "wealth-building",
-        "career",
-        "food",
-        "business",
-        "tech",
-        "health"
-    ];
+    const categories = getAllCategories();
     const params: { category: string; slug: string }[] = [];
 
     for (const category of categories) {
