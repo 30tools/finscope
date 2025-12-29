@@ -29,6 +29,7 @@ export async function generateMetadata({ params }: { params: { category: string 
     return constructMetadata({
         title,
         description: `Read the best guides and tips about ${category.replace("-", " ")}.`,
+        canonicalUrl: `${SITE_URL}/${category}`,
     });
 }
 

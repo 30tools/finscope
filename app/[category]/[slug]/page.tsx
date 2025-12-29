@@ -62,6 +62,7 @@ export async function generateMetadata({ params }: Props) {
         title: `${post.title} | Unstory`,
         description: post.description,
         image: ogImage,
+        canonicalUrl: `${SITE_URL}/${category}/${slug}`,
     });
 }
 

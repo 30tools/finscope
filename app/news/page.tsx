@@ -3,10 +3,13 @@ import PaginatedPostList from '@/components/PaginatedPostList';
 import { getRecentPosts } from '@/lib/posts';
 import { Metadata } from 'next';
 
-export const metadata: Metadata = {
+import { constructMetadata, SITE_URL } from '@/lib/seo';
+
+export const metadata: Metadata = constructMetadata({
     title: 'Latest Financial News & Insights | Unstory',
     description: 'Stay updated with the latest trends in personal finance, credit cards, banking, and insurance.',
-};
+    canonicalUrl: `${SITE_URL}/news`,
+});
 
 export default function NewsPage() {
     const posts = getRecentPosts();

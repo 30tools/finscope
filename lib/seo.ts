@@ -11,6 +11,7 @@ export function constructMetadata({
     image = "https://unstory.app/og-image.jpg",
     icons = "/favicon.ico",
     noIndex = false,
+    canonicalUrl,
     verification = {},
 }: {
     title?: string;
@@ -18,6 +19,7 @@ export function constructMetadata({
     image?: string;
     icons?: string;
     noIndex?: boolean;
+    canonicalUrl?: string;
     verification?: {
         google?: string;
         yandex?: string;
@@ -33,7 +35,7 @@ export function constructMetadata({
             description,
             type: "website",
             locale: "en_US",
-            url: SITE_URL,
+            url: canonicalUrl || SITE_URL,
             siteName: "Unstory",
             images: [
                 {
@@ -75,7 +77,7 @@ export function constructMetadata({
         },
         manifest: "/manifest.json",
         alternates: {
-            canonical: SITE_URL,
+            canonical: canonicalUrl || SITE_URL,
             types: {
                 'application/rss+xml': `${SITE_URL}/feed.xml`,
             },

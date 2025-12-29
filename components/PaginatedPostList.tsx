@@ -52,27 +52,54 @@ function PaginatedPostListContent({
     return (
         <div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {currentPosts.map((post) => (
-                    <Link key={post.slug} href={`/${post.category || category}/${post.slug}`} className="block group h-full">
-                        <article className="border border-gray-100 bg-white rounded-lg p-6 hover:shadow-lg transition h-full flex flex-col">
-                            <div className="mb-4">
-                                <span className="text-xs font-bold text-sky-600 uppercase tracking-wider bg-sky-50 px-2 py-1 rounded">
-                                    {post.category?.replace(/-/g, " ") || category?.replace(/-/g, " ")}
-                                </span>
-                            </div>
-                            <h2 className="text-xl font-bold mb-3 text-gray-900 group-hover:text-sky-600 line-clamp-2">
-                                {post.title}
-                            </h2>
-                            <p className="text-gray-600 text-sm mb-4 line-clamp-3 flex-grow">
-                                {post.description}
-                            </p>
-                            <div className="flex items-center justify-between text-xs text-gray-400 mt-auto pt-4 border-t border-gray-50">
-                                <span>{new Date(post.publishedAt).toLocaleDateString()}</span>
-                                <span>{post.author || 'Unstory Team'}</span>
-                            </div>
-                        </article>
-                    </Link>
-                ))}
+                {currentPosts.map((post) => {
+                    const imageUrl = `https://v1.screenshot.11ty.dev/${encodeURIComponent(`https://unstory.app/${post.category}/${post.slug}`)}/opengraph/`;
+
+                    return (
+                        <Link key={post.slug} href={`/${post.category || category}/${post.slug}`} className="block group h-full">
+                            <article className="h-full flex flex-col bg-white dark:bg-zinc-900 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                                {/* Image Container */}
+                                <div className="relative aspect-video w-full overflow-hidden bg-zinc-100 dark:bg-zinc-800">
+                                    <img
+                                        src={imageUrl}
+                                        alt={post.title}
+                                        className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
+                                        loading="lazy"
+                                    />
+                                    <div className="absolute top-4 left-4">
+                                        <span className="inline-block px-3 py-1 text-xs font-bold tracking-wider text-white uppercase bg-black/60 backdrop-blur-md rounded-full border border-white/10">
+                                            {post.category?.replace(/-/g, " ") || category?.replace(/-/g, " ")}
+                                        </span>
+                                    </div>
+                                </div>
+
+                                {/* Content */}
+                                <div className="flex flex-col flex-grow p-6">
+                                    <h2 className="text-xl font-bold mb-3 text-zinc-900 dark:text-zinc-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors line-clamp-2 leading-tight">
+                                        {post.title}
+                                    </h2>
+                                    <p className="text-zinc-600 dark:text-zinc-400 text-sm mb-4 line-clamp-3 flex-grow leading-relaxed">
+                                        {post.description}
+                                    </p>
+
+                                    <div className="flex items-center justify-between mt-auto pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                                        <div className="flex items-center space-x-2">
+                                            <div className="w-6 h-6 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-[10px] mobile:text-[10px] font-bold text-white">
+                                                {(post.author?.[0] || 'U').toUpperCase()}
+                                            </div>
+                                            <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+                                                {post.author || 'Unstory Team'}
+                                            </span>
+                                        </div>
+                                        <time className="text-xs text-zinc-400 font-medium" dateTime={post.publishedAt}>
+                                            {new Date(post.publishedAt).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
+                                        </time>
+                                    </div>
+                                </div>
+                            </article>
+                        </Link>
+                    )
+                })}
             </div>
 
             {totalPages > 1 && (

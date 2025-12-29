@@ -2,6 +2,12 @@ import Link from "next/link";
 import { getAllCategories, getAllPosts, Post } from "@/lib/posts";
 import PaginatedPostList from "@/components/PaginatedPostList";
 import VisitorBadge from "@/components/VisitorBadge";
+import { constructMetadata, SITE_URL } from "@/lib/seo";
+import { Metadata } from "next";
+
+export const metadata: Metadata = constructMetadata({
+    canonicalUrl: SITE_URL,
+});
 
 export default function Home() {
     const categories = getAllCategories();
