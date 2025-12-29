@@ -15,8 +15,9 @@ export default function Header() {
                     <Link href="/tech" className="text-sm font-medium hover:text-blue-600 transition-colors">Tech</Link>
                     <Link href="/health" className="text-sm font-medium hover:text-blue-600 transition-colors">Health</Link>
                     <Link href="/tools" className="text-sm font-medium hover:text-blue-600 transition-colors">Tools</Link>
-                    <Link href="/insurance" className="hover:text-blue-600 transition">Insurance</Link>
-                    <Link href="/tax-saving" className="hover:text-blue-600 transition">Tax Saving</Link>
+                    <Link href="/insurance" className="text-sm font-medium hover:text-blue-600 transition-colors">Insurance</Link>
+                    <Link href="/sports" className="text-sm font-medium hover:text-blue-600 transition-colors">Sports</Link>
+                    <Link href="/trending" className="text-sm font-medium hover:text-blue-600 transition-colors">Trending</Link>
                 </nav>
                 {/* Mobile menu button would go here */}
             </div>
