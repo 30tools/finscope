@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
-import { Search, ExternalLink, MousePointer2, CheckCircle2, AlertCircle } from "lucide-react";
+import { Search, ExternalLink, MousePointer2, ShieldCheck, AlertCircle } from "lucide-react";
 
 export default function SearchVerifyWidget() {
     const searchParams = useSearchParams();
@@ -29,101 +29,76 @@ export default function SearchVerifyWidget() {
     if (step === "init") return null;
 
     return (
-        <div id="unlock-widget" className="my-10 overflow-hidden bg-white dark:bg-zinc-950 border border-blue-100 dark:border-zinc-800 rounded-2xl shadow-2xl shadow-blue-500/10 transition-all duration-500">
-            {/* Header */}
-            <div className="bg-blue-600 dark:bg-blue-700 py-4 px-6">
-                <div className="flex items-center space-x-3 text-white">
-                    <CheckCircle2 className="w-6 h-6" />
-                    <h3 className="text-lg font-bold">Unstory Secure Access</h3>
+        <div id="unlock-widget" className="my-10 overflow-hidden bg-white dark:bg-zinc-950 border-4 border-dashed border-blue-500 rounded-[2rem] shadow-2xl transition-all duration-500">
+            <div className="bg-blue-600 py-6 px-8 flex items-center justify-between text-white">
+                <div className="flex items-center space-x-3">
+                    <ShieldCheck className="w-8 h-8" />
+                    <h3 className="text-xl font-black uppercase tracking-tighter">Human Verification Required</h3>
                 </div>
             </div>
 
-            <div className="p-8">
-                {/* Step 1: Instructions */}
+            <div className="p-8 md:p-12">
                 {step === "instructions" && (
-                    <div className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-500">
                         <div className="text-center">
-                            <h4 className="text-2xl font-black text-zinc-900 dark:text-white mb-2">Almost there!</h4>
-                            <p className="text-zinc-500 dark:text-zinc-400">Complete one quick step to verify your session and unlock your link.</p>
+                            <h4 className="text-3xl font-black text-zinc-900 dark:text-white mb-4 tracking-tight">Unlock Your Secure Link</h4>
+                            <p className="text-zinc-600 dark:text-zinc-400 text-lg">Follow these 2 simple steps to verify your access.</p>
                         </div>
 
-                        <div className="grid gap-4 md:grid-cols-3">
-                            {[
-                                { icon: Search, title: "1. Click Search", desc: "Open Google in a new tab" },
-                                { icon: MousePointer2, title: "2. Click Us", desc: "Select any link from unstory.app" },
-                                { icon: ExternalLink, title: "3. Access", desc: "Link unlocks instantly on that page" }
-                            ].map((item, i) => (
-                                <div key={i} className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 flex flex-col items-center text-center">
-                                    <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-3">
-                                        <item.icon className="w-5 h-5" />
-                                    </div>
-                                    <p className="font-bold text-sm text-zinc-900 dark:text-white">{item.title}</p>
-                                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-1">{item.desc}</p>
+                        <div className="grid gap-6 md:grid-cols-2">
+                            <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border-2 border-zinc-100 dark:border-zinc-800 relative group overflow-hidden">
+                                <span className="absolute -right-4 -top-4 text-7xl font-black text-zinc-200 dark:text-zinc-800 opacity-50 group-hover:scale-110 transition-transform">1</span>
+                                <div className="w-12 h-12 rounded-xl bg-blue-600 text-white flex items-center justify-center mb-4">
+                                    <Search className="w-6 h-6" />
                                 </div>
-                            ))}
+                                <p className="font-black text-xl text-zinc-900 dark:text-white mb-2">Search Google</p>
+                                <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed">Click the button below to open Google Search results for our site.</p>
+                            </div>
+
+                            <div className="p-6 rounded-2xl bg-zinc-50 dark:bg-zinc-900 border-2 border-zinc-100 dark:border-zinc-800 relative group overflow-hidden">
+                                <span className="absolute -right-4 -top-4 text-7xl font-black text-zinc-200 dark:text-zinc-800 opacity-50 group-hover:scale-110 transition-transform">2</span>
+                                <div className="w-12 h-12 rounded-xl bg-green-600 text-white flex items-center justify-center mb-4">
+                                    <MousePointer2 className="w-6 h-6" />
+                                </div>
+                                <p className="font-black text-xl text-zinc-900 dark:text-white mb-2">Click Any Link</p>
+                                <p className="text-sm text-zinc-500 dark:text-zinc-400 font-medium leading-relaxed">Select any result from unstory.app. The <strong>"Access Link"</strong> button will appear on that page!</p>
+                            </div>
                         </div>
 
-                        <div className="pt-2">
+                        <div className="pt-4">
                             <button
                                 onClick={handleGoogleSearch}
-                                className="w-full flex items-center justify-center space-x-3 px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-black text-lg rounded-xl transition-all hover:scale-[1.02] active:scale-95 shadow-xl shadow-blue-500/20 group"
+                                className="w-full flex items-center justify-center space-x-4 px-10 py-6 bg-blue-600 hover:bg-blue-700 text-white font-black text-2xl rounded-2xl transition-all hover:scale-[1.03] active:scale-95 shadow-2xl shadow-blue-500/40 group"
                             >
-                                <span>Verify & Open Google Search</span>
-                                <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                                <span>I am Human - Verify Now</span>
+                                <ExternalLink className="w-6 h-6 group-hover:scale-110 transition-transform" />
                             </button>
-                        </div>
-
-                        <div className="flex items-start space-x-3 p-4 rounded-lg bg-amber-50 dark:bg-amber-900/20 border border-amber-100 dark:border-amber-800/30">
-                            <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-500 shrink-0 mt-0.5" />
-                            <p className="text-xs text-amber-800 dark:text-amber-200 leading-relaxed">
-                                <strong>Why this step?</strong> We use this to prevent bot abuse and ensure you're a human reader. This verification keeps our content free and high-quality.
-                            </p>
                         </div>
                     </div>
                 )}
 
-                {/* Step 2: In Search */}
                 {step === "searching" && (
-                    <div className="space-y-8 py-6 text-center animate-in fade-in zoom-in duration-500">
-                        <div className="relative inline-block">
-                            <div className="w-20 h-20 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400">
-                                <Search className="w-10 h-10 animate-pulse" />
-                            </div>
-                            <div className="absolute -top-1 -right-1">
-                                <span className="flex h-4 w-4">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-4 w-4 bg-blue-500"></span>
-                                </span>
-                            </div>
+                    <div className="space-y-10 py-10 text-center animate-in fade-in zoom-in duration-500">
+                        <div className="w-32 h-32 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600 dark:text-blue-400 mx-auto border-4 border-blue-100 dark:border-blue-900/40">
+                            <Search className="w-16 h-16 animate-pulse" />
                         </div>
 
-                        <div>
-                            <h4 className="text-2xl font-black text-zinc-900 dark:text-white mb-4">Complete Verification in the New Tab</h4>
-                            <div className="max-w-md mx-auto space-y-4">
-                                <div className="p-4 bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-xl">
-                                    <p className="text-zinc-700 dark:text-zinc-300 font-medium">
-                                        1. Find the link from <span className="text-blue-600 font-bold underline">unstory.app</span>
-                                    </p>
-                                    <p className="text-zinc-500 text-sm mt-1">Look for results title starting with "Unstory"</p>
-                                </div>
-                                <div className="p-4 bg-zinc-50 dark:bg-zinc-900 border border-zinc-100 dark:border-zinc-800 rounded-xl">
-                                    <p className="text-zinc-700 dark:text-zinc-300 font-medium">
-                                        2. Click it & keep that page open
-                                    </p>
-                                    <p className="text-zinc-500 text-sm mt-1">Verification takes only 15 seconds on that page.</p>
-                                </div>
+                        <div className="max-w-md mx-auto space-y-6">
+                            <h4 className="text-3xl font-black text-zinc-900 dark:text-white">Verify in the new tab!</h4>
+                            <div className="p-6 bg-amber-50 dark:bg-amber-900/20 border-2 border-amber-200 dark:border-amber-800/40 rounded-2xl text-amber-900 dark:text-amber-100 font-bold text-lg shadow-lg">
+                                Important: You must click an "unstory.app" link in the Google Search results to continue.
                             </div>
+                            <p className="text-zinc-500 dark:text-zinc-400 font-bold uppercase tracking-widest text-xs">
+                                Verification will complete on the article page.
+                            </p>
                         </div>
-
-                        <p className="text-xs text-zinc-400 font-medium italic">
-                            Keep this tab open. Your link will be ready in the other window.
-                        </p>
 
                         <button
                             onClick={handleGoogleSearch}
-                            className="text-sm font-bold text-blue-600 hover:text-blue-700 underline"
+                            className="text-blue-600 hover:text-blue-700 font-black flex items-center justify-center space-x-2 mx-auto mt-4 px-6 py-2 rounded-xl bg-blue-50 dark:bg-blue-900/20"
                         >
-                            Open Google Search again if it closed
+                            <ExternalLink className="w-4 h-4" />
+                            <span>Didn't open? Try again</span>
                         </button>
                     </div>
                 )}
