@@ -14,12 +14,14 @@ import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import { cn } from "@/lib/utils";
 import AuthorBio from "@/components/AuthorBio";
 import VisitorBadge from "@/components/VisitorBadge";
+import AIImagePoster from "@/components/AIImagePoster";
 import { SITE_URL } from "@/lib/seo";
 
 // Custom components for MDX
 const components = {
     // Add any custom components here
     AdSlot: AdSlot,
+    AIImagePoster: AIImagePoster,
     table: (props: any) => (
         <div className="overflow-x-auto my-6">
             <table className="min-w-full border-collapse border border-gray-300" {...props} />
@@ -181,7 +183,7 @@ export default async function ArticlePage({ params }: Props) {
 
                 <ArticleLayout toc={toc}>
                     <MDXRemote
-                        source={post.content}
+                        source={post.content.replace(/\n\n/, `\n\n<AIImagePoster title="${post.title}" />\n\n`)}
                         options={{
                             mdxOptions: {
                                 remarkPlugins: [remarkGfm],
