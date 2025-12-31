@@ -2,7 +2,7 @@ import { constructMetadata, SITE_URL } from "@/lib/seo";
 import { Metadata } from "next";
 import ArticleLayout from "@/components/ArticleLayout";
 import Breadcrumbs from "@/components/Breadcrumbs";
-import RedirectWidget from "@/components/RedirectWidget";
+import SearchVerifyWidget from "@/components/SearchVerifyWidget";
 import { Suspense } from "react";
 import Link from "next/link";
 import AuthorBio from "@/components/AuthorBio";
@@ -58,7 +58,7 @@ export default function FinancialPlanningPage() {
 
                 <div id="widget" className="my-10">
                     <Suspense fallback={<div className="p-8 text-center bg-gray-50 rounded-xl">Loading secure link...</div>}>
-                        <RedirectWidget />
+                        <SearchVerifyWidget />
                     </Suspense>
                 </div>
 
