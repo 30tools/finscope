@@ -1,1 +1,4 @@
-google.com, pub-1828915420581549, DIRECT, f08c47fec0942fa0
+# Place your Ezoic ads.txt content here
+# Login to Ezoic Dashboard -> Settings -> Ads.txt to copy your specific lines.
+# Example:
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

@@ -35,6 +35,35 @@ export default function RootLayout({
                     src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
                     strategy="afterInteractive"
                 />
+
+                {/* Ezoic Privacy Scripts - Must optionally execute first */}
+                <Script
+                    id="ezoic-privacy-consent"
+                    strategy="beforeInteractive"
+                    src="https://cmp.gatekeeperconsent.com/min.js"
+                    data-cfasync="false"
+                />
+                <Script
+                    id="ezoic-privacy-cmp"
+                    strategy="beforeInteractive"
+                    src="https://the.gatekeeperconsent.com/cmp.min.js"
+                    data-cfasync="false"
+                />
+
+                {/* Ezoic Header Script */}
+                <Script
+                    id="ezoic-header"
+                    strategy="beforeInteractive"
+                    dangerouslySetInnerHTML={{
+                        __html: `var ezstandalone = window.ezstandalone || {}; ezstandalone.cmd = ezstandalone.cmd || [];`
+                    }}
+                />
+                <Script
+                    id="ezoic-sa"
+                    strategy="beforeInteractive"
+                    src="//www.ezojs.com/ezoic/sa.min.js"
+                />
+
                 <Script id="google-analytics" strategy="afterInteractive">
                     {`
                         window.dataLayer = window.dataLayer || [];

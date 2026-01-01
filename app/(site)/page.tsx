@@ -9,6 +9,8 @@ export const metadata: Metadata = constructMetadata({
     canonicalUrl: SITE_URL,
 });
 
+import EzoicPlaceholder from "@/components/EzoicPlaceholder";
+
 export default function Home() {
     const categories = getAllCategories();
 
@@ -37,6 +39,13 @@ export default function Home() {
                     </p>
                 </div>
             </section>
+
+            {/* Ad Placeholder */}
+            <div className="py-8 bg-gray-50/50">
+                <div className="max-w-4xl mx-auto px-6">
+                    <EzoicPlaceholder id="103" />
+                </div>
+            </div>
 
             {/* Recent Posts Section */}
             <div className="max-w-4xl mx-auto px-6 py-16">
