@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "deploy": "next build && npx wrangler pages deploy out --project-name finscope --commit-dirty=true"
+    "deploy": "next build && npx wrangler pages deploy out --project-name finscope --commit-dirty=true",
+    "zip:content": "rm -f unstory_articles.zip && zip -r unstory_articles.zip content"
   },
   "dependencies": {
     "clsx": "^2.1.1",
