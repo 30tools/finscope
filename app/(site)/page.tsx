@@ -1,15 +1,14 @@
 import Link from "next/link";
 import { getAllCategories, getAllPosts, Post } from "@/lib/posts";
-import PaginatedPostList from "@/components/PaginatedPostList";
 import VisitorBadge from "@/components/VisitorBadge";
 import { constructMetadata, SITE_URL } from "@/lib/seo";
 import { Metadata } from "next";
+import DevToFeed from "@/components/DevToFeed";
+import EzoicPlaceholder from "@/components/EzoicPlaceholder";
 
 export const metadata: Metadata = constructMetadata({
     canonicalUrl: SITE_URL,
 });
-
-import EzoicPlaceholder from "@/components/EzoicPlaceholder";
 
 export default function Home() {
     const categories = getAllCategories();
@@ -27,42 +26,17 @@ export default function Home() {
     });
 
     return (
-        <main className="min-h-screen bg-white">
-            {/* Hero Section */}
-            <section className="bg-gray-50 border-b border-gray-200">
-                <div className="max-w-4xl mx-auto px-6 py-20 text-center">
-                    <h1 className="text-5xl font-extrabold text-gray-900 tracking-tight mb-6">
-                        Unstory
-                    </h1>
-                    <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                        Your daily scope into the world of finance. Expert analysis on credit cards, loans, insurance, and tax saving strategies for the modern Indian investor.
-                    </p>
-                </div>
-            </section>
+        <main className="min-h-screen bg-gray-100 dark:bg-black">
+            {/* Header / Nav would go here if not in Layout */}
 
-            {/* Ad Placeholder */}
-            <div className="py-8 bg-gray-50/50">
-                <div className="max-w-4xl mx-auto px-6">
-                    <EzoicPlaceholder id="103" />
-                </div>
+            {/* Main Feed Area */}
+            <div className="pt-4">
+                <DevToFeed posts={allPosts} categories={categories} />
             </div>
 
-            {/* Recent Posts Section */}
-            <div className="max-w-4xl mx-auto px-6 py-16">
-                <h2 className="text-2xl font-bold text-gray-900 mb-8 pb-4 border-b border-gray-100">
-                    Latest Analysis
-                </h2>
-
-                <div className="grid gap-10">
-                    {allPosts.length > 0 ? (
-                        <PaginatedPostList posts={allPosts} itemsPerPage={30} />
-                    ) : (
-                        <p className="text-center text-gray-500 py-10">No articles found. Check back later!</p>
-                    )}
-                </div>
+            <div className="max-w-4xl mx-auto px-6 py-8 text-center">
                 <VisitorBadge path="" />
             </div>
         </main>
     );
 }
-
