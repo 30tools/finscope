@@ -119,6 +119,7 @@ allFiles.forEach(filepath => {
         // Doing full parsing is complex in a single script. 
         // We will use a robust Regex implementation that ignores Markdown Links and Code Blocks.
 
+        // FIXED: Added word boundaries \b to avoid matching inside words
         const regex = new RegExp(`(?<!\\[|\\(|#|\\/)\\b${escapeRegExp(item.keyword)}\\b(?!\\]|\\)|")`, 'i');
         // 'i' flag for case-insensitive matching if desired, but our map has case-specific entries. 
         // Let's use case-sensitive for titles (usually specific) and rely on the map's lowercased variants for categories.
