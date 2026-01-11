@@ -91,7 +91,7 @@ export default async function ArticlePage({ params }: Props) {
     }
 
     const breadcrumbs = [
-        { name: category.replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()), href: `/${category}` },
+        { name: (category || "").replace(/-/g, " ").replace(/\b\w/g, l => l.toUpperCase()), href: `/${category}` },
         { name: post.title, href: `/${category}/${slug}` },
     ];
 

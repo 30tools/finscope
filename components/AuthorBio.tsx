@@ -13,7 +13,7 @@ export default function AuthorBio({ name, role, bio, twitter, linkedin }: Author
     return (
         <div className="bg-gray-50 rounded-xl p-8 mt-12 border border-gray-100 flex flex-col md:flex-row gap-6 items-center md:items-start text-center md:text-left">
             <div className="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 text-3xl font-bold flex-shrink-0">
-                {name.charAt(0)}
+                {(name || "U").charAt(0)}
             </div>
             <div>
                 <h4 className="text-xl font-bold text-gray-900 mb-1">{name}</h4>
